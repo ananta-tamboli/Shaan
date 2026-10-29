@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="emerald">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shamika & Ananta — Wedding Celebration Invitation</title>
+  
+  <!-- Privacy & Search Engine Blocking Directives -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+
+  <!-- Meta tags for rich WhatsApp & Social previews -->
+  <meta name="description" content="Join us in celebrating the wedding of Shamika & Ananta at Oasis Banquets, Pune. Details, itinerary, venue maps, and RSVP inside.">
+  <meta property="og:title" content="Shamika & Ananta — Wedding Invitation">
+  <meta property="og:description" content="We invite you to celebrate our special day with us. View itinerary, venue maps, and RSVP.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Cinzel Decorative, Alex Brush, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Tailwind Configuration for custom fonts & styling -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            script: ['"Alex Brush"', 'cursive'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              50: '#fdfbf0',
+              100: '#fbf5d6',
+              200: '#f6e7a2',
+              300: '#ebd367',
+              400: '#dfbc36',
+              500: '#c59b1f',
+              600: '#a67a15',
+              700: '#845913',
+              800: '#6f4716',
+              900: '#5f3c17',
+            }
+          },
+          animation: {
+            'float-slow': 'float 6s ease-in-out infinite',
+            'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+            'spin-slow': 'spin 20s linear infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: 0.9, transform: 'scale(1)' },
+              '50%': { opacity: 1, transform: 'scale(1.02)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* =========================================================================
+       DYNAMIC COLOR THEMES (Emerald, Burgundy, Terracotta)
+       ========================================================================= */
+    :root, [data-theme="emerald"] {
+      --color-primary: #083b2b;
+      --color-primary-light: #0e5640;
+      --color-primary-dark: #04241a;
+      --color-accent: #c99834;
+      --color-accent-light: #e5bd68;
+      --color-accent-glow: rgba(201, 152, 52, 0.25);
+      --color-bg-base: #fcfbf7;
+      --color-bg-card: #ffffff;
+      --color-bg-alt: #f4f0e6;
+      --color-text-main: #142820;
+      --color-text-muted: #4e6359;
+      --color-border: #e8ddc7;
+      --theme-gradient: linear-gradient(135deg, #083b2b 0%, #0e5640 50%, #083b2b 100%);
+      --gold-gradient: linear-gradient(135deg, #b8860b 0%, #ffd700 50%, #d4af37 100%);
+    }
+
+    [data-theme="burgundy"] {
+      --color-primary: #4e121d;
+      --color-primary-light: #701c2b;
+      --color-primary-dark: #31070e;
+      --color-accent: #d4af37;
+      --color-accent-light: #f3e5ab;
+      --color-accent-glow: rgba(212, 175, 55, 0.25);
+      --color-bg-base: #fdfaf9;
+      --color-bg-card: #ffffff;
+      --color-bg-alt: #f7edea;
+      --color-text-main: #2b1115;
+      --color-text-muted: #6b4d52;
+      --color-border: #ead7d6;
+      --theme-gradient: linear-gradient(135deg, #4e121d 0%, #701c2b 50%, #4e121d 100%);
+      --gold-gradient: linear-gradient(135deg, #c59b27 0%, #f7e199 50%, #b38728 100%);
+    }
+
+    [data-theme="terracotta"] {
+      --color-primary: #8c3b24;
+      --color-primary-light: #ad4f34;
+      --color-primary-dark: #5e2414;
+      --color-accent: #d99338;
+      --color-accent-light: #f5cca0;
+      --color-accent-glow: rgba(217, 147, 56, 0.25);
+      --color-bg-base: #faf6f0;
+      --color-bg-card: #ffffff;
+      --color-bg-alt: #f2e9dc;
+      --color-text-main: #2c1b16;
+      --color-text-muted: #69524b;
+      --color-border: #e8d9c7;
+      --theme-gradient: linear-gradient(135deg, #8c3b24 0%, #ad4f34 50%, #8c3b24 100%);
+      --gold-gradient: linear-gradient(135deg, #b87333 0%, #f0a35c 50%, #d99338 100%);
+    }
+
+    body {
+      background-color: var(--color-bg-base);
+      color: var(--color-text-main);
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
+    }
+
+    /* Traditional Indian Arch Pattern Background */
+    .bg-pattern {
+      background-image: radial-gradient(var(--color-accent) 1px, transparent 0);
+      background-size: 28px 28px;
+      opacity: 0.95;
+    }
+
+    /* Metallic Foil Shimmer Effect */
+    .gold-foil-text {
+      background: linear-gradient(90deg, #b8860b 0%, #e6ca65 30%, #fff2b2 50%, #e6ca65 70%, #b8860b 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .gold-foil-border {
+      border-image: linear-gradient(to right, #b8860b, #ffd700, #b8860b) 1;
+    }
+
+    .gold-box-shadow {
+      box-shadow: 0 10px 30px -5px var(--color-accent-glow), 0 0 0 1px var(--color-border);
+    }
+
+    .gold-box-shadow-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gold-box-shadow-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -8px var(--color-accent-glow), 0 0 0 1.5px var(--color-accent);
+    }
+
+    /* Theme Dynamic Utility Classes */
+    .theme-primary-bg {
+      background: var(--theme-gradient);
+    }
+    .theme-primary-text {
+      color: var(--color-primary);
+    }
+    .theme-accent-text {
+      color: var(--color-accent);
+    }
+    .theme-accent-bg {
+      background-color: var(--color-accent);
+    }
+    .theme-border {
+      border-color: var(--color-border);
+    }
+    .theme-border-accent {
+      border-color: var(--color-accent);
+    }
+
+    /* Mandala rotating watermark */
+    .mandala-watermark {
+      pointer-events: none;
+      opacity: 0.05;
+      position: absolute;
+      color: var(--color-accent);
+    }
+
+    /* Smooth custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-bg-base);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-accent);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-primary);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-amber-200 selection:text-amber-900 relative">
+
+  <!-- =========================================================================
+       AUDIO ELEMENT FOR AMBIENT BACKGROUND MUSIC
+       ========================================================================= -->
+  <audio id="weddingAudio" loop preload="none">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_c8404534eb.mp3?filename=indian-flute-meditation-ambient-111164.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- =========================================================================
+       STICKY / FLOATING HEADER & NAVIGATION
+       ========================================================================= -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-3 px-4 md:px-8 bg-white/85 backdrop-blur-md border-b border-amber-900/10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Monogram Logo -->
+      <a href="#hero" class="group flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-50/50 group-hover:scale-105 transition-transform">
+          <span id="navMonogram" class="font-display text-sm font-bold text-amber-700 tracking-wider">A & R</span>
+        </div>
+        <span class="font-script text-2xl text-amber-900 hidden sm:inline">Shamika & Ananta</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-7 text-xs uppercase tracking-widest font-medium text-stone-700">
+        <a href="#story" class="hover:text-amber-600 transition-colors">Our Story</a>
+        <a href="#itinerary" class="hover:text-amber-600 transition-colors">Itinerary</a>
+        <a href="#gallery" class="hover:text-amber-600 transition-colors">Moments</a>
+        <a href="#rsvp" class="hover:text-amber-600 transition-colors">RSVP</a>
+        <a href="#details" class="hover:text-amber-600 transition-colors">Details</a>
+      </nav>
+
+      <!-- Right Controls: Theme Switcher & Music Toggle -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Theme Switcher Dropdown / Pill -->
+        <div class="relative inline-block text-left" id="themeDropdownContainer">
+          <button id="themeToggleBtn" type="button" title="Change Theme Palette" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-medium border border-amber-200 bg-amber-50/80 hover:bg-amber-100/70 text-amber-900 transition-all shadow-sm">
+            <span class="w-3 h-3 rounded-full shadow-inner" id="themeColorIndicator" style="background-color: #083b2b;"></span>
+            <span class="hidden sm:inline text-[11px] font-semibold tracking-wider uppercase" id="currentThemeLabel">Emerald</span>
+            <svg class="w-3 h-3 text-amber-700 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div id="themeMenu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-xl border border-stone-200 py-1.5 z-50 animate-in fade-in">
+            <div class="px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-400 border-b border-stone-100">Select Color Theme</div>
+            <button onclick="setTheme('emerald')" class="w-full text-left px-3 py-2 text-xs flex items-center gap-2.5 hover:bg-stone-50 transition-colors text-stone-800">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#083b2b] border border-amber-300"></span>
+              <div>
+                <div class="font-semibold">Royal Emerald</div>
+                <div class="text-[10px] text-stone-500">Regal Green & Warm Gold</div>
+              </div>
+            </button>
+            <button onclick="setTheme('burgundy')" class="w-full text-left px-3 py-2 text-xs flex items-center gap-2.5 hover:bg-stone-50 transition-colors text-stone-800">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#4e121d] border border-amber-300"></span>
+              <div>
+                <div class="font-semibold">Royal Burgundy</div>
+                <div class="text-[10px] text-stone-500">Crimson & Champagne Gold</div>
+              </div>
+            </button>
+            <button onclick="setTheme('terracotta')" class="w-full text-left px-3 py-2 text-xs flex items-center gap-2.5 hover:bg-stone-50 transition-colors text-stone-800">
+              <span class="w-3.5 h-3.5 rounded-full bg-[#8c3b24] border border-amber-300"></span>
+              <div>
+                <div class="font-semibold">Warm Terracotta</div>
+                <div class="text-[10px] text-stone-500">Earthy Boho & Sage Green</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Music Play/Pause Toggle Button -->
+        <button id="musicToggleBtn" type="button" title="Play Ambient Music" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-amber-300/80 bg-gradient-to-r from-amber-100 to-amber-50 hover:from-amber-200 hover:to-amber-100 text-amber-900 transition-all shadow-sm">
+          <span id="musicIcon" class="text-sm">🎵</span>
+          <span id="musicStatusText" class="hidden sm:inline text-[11px] uppercase tracking-wider">Music: Off</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-lg text-stone-700 hover:text-amber-800 focus:outline-none" aria-label="Toggle Navigation">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-down Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 mt-2 pt-3 pb-2 px-2 flex flex-col space-y-2 text-center text-xs uppercase tracking-widest font-semibold text-stone-700 bg-white/95 rounded-b-xl shadow-lg">
+      <a href="#hero" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Home</a>
+      <a href="#story" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Our Story</a>
+      <a href="#itinerary" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Events Itinerary</a>
+      <a href="#gallery" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Moments</a>
+      <a href="#rsvp" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">RSVP</a>
+      <a href="#details" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Venue & Details</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION
+       ========================================================================= -->
+  <section id="hero" class="relative min-h-screen pt-28 pb-20 px-4 flex flex-col items-center justify-center text-center bg-pattern overflow-hidden">
+    <!-- Traditional Floral Mandala Watermark (Top Left) -->
+    <svg class="mandala-watermark -top-24 -left-24 w-96 h-96 animate-spin-slow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 4" class="text-amber-700" />
+      <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <path d="M100 10 Q115 50 100 90 Q85 50 100 10" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <path d="M100 190 Q115 150 100 110 Q85 150 100 190" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <path d="M10 100 Q50 115 90 100 Q50 85 10 100" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <path d="M190 100 Q150 115 110 100 Q150 85 190 100" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+    </svg>
+
+    <!-- Traditional Floral Mandala Watermark (Bottom Right) -->
+    <svg class="mandala-watermark -bottom-24 -right-24 w-96 h-96 animate-spin-slow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 4" class="text-amber-700" />
+      <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+      <circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="0.8" class="text-amber-700" />
+    </svg>
+
+    <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+      
+      <!-- Auspicious Vedic Invocation -->
+      <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-amber-100/60 border border-amber-300/60 mb-6 shadow-sm">
+        <span class="text-amber-600 text-xs">🪔</span>
+        <span id="heroBlessing" class="font-serif text-sm tracking-widest text-amber-900 font-semibold">॥ श्री गणेशाय नमः ॥</span>
+        <span class="text-amber-600 text-xs">🪔</span>
+      </div>
+
+      <!-- Tagline / Invitation lead -->
+      <p id="heroLead" class="font-serif italic text-lg sm:text-xl text-stone-600 max-w-lg mb-2">
+        Together with their families, invite you to celebrate their union
+      </p>
+
+      <!-- Couple Names in Regal Display Typography -->
+      <div class="my-4 py-2 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-6">
+        <h1 id="brideHeroName" class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone-900">
+          Shamika
+        </h1>
+        <span class="font-script text-4xl sm:text-5xl md:text-6xl text-amber-600 my-1 md:my-0">&</span>
+        <h1 id="groomHeroName" class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-stone-900">
+          Ananta
+        </h1>
+      </div>
+
+      <!-- Traditional Ornate Divider SVG -->
+      <div class="flex items-center justify-center gap-3 my-4 w-full max-w-xs text-amber-600">
+        <div class="h-px bg-gradient-to-r from-transparent via-amber-400 to-amber-600 flex-1"></div>
+        <svg class="w-5 h-5 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+        <div class="h-px bg-gradient-to-l from-transparent via-amber-400 to-amber-600 flex-1"></div>
+      </div>
+
+      <!-- Date & Destination Tagline -->
+      <div class="mb-8">
+        <p id="heroWeddingDate" class="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-stone-800">
+          Sunday, December 13, 2026
+        </p>
+        <p id="heroLocation" class="text-xs sm:text-sm font-medium uppercase tracking-[0.25em] text-amber-800/80 mt-1">
+          Oasis Banquets, Chandani Chowk, Warje • Pune, Maharashtra
+        </p>
+      </div>
+
+      <!-- Live Interactive Countdown Timer Cards -->
+      <div class="w-full max-w-2xl bg-white/70 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-box-shadow border border-amber-200/80 mb-10">
+        <div class="text-center mb-4">
+          <span class="text-xs uppercase tracking-widest text-stone-500 font-semibold">Counting down to forever</span>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2.5 sm:gap-4 text-center">
+          <!-- Days -->
+          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
+            <span id="countdownDays" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Days</span>
+          </div>
+
+          <!-- Hours -->
+          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
+            <span id="countdownHours" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Hours</span>
+          </div>
+
+          <!-- Minutes -->
+          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
+            <span id="countdownMinutes" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Mins</span>
+          </div>
+
+          <!-- Seconds -->
+          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
+            <span id="countdownSeconds" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-600 animate-pulse-subtle">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+        <a href="#rsvp" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-medium text-sm tracking-wider uppercase shadow-lg shadow-amber-600/30 hover:shadow-xl transition-all duration-300 text-center">
+          RSVP With Us
+        </a>
+        <a href="#itinerary" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/90 hover:bg-amber-50/80 text-stone-800 border border-amber-300 font-medium text-sm tracking-wider uppercase shadow-sm transition-all text-center">
+          Explore Itinerary
+        </a>
+      </div>
+
+      <!-- Quick Add to Calendar Dropdown Button -->
+      <div class="mt-4">
+        <button id="addToCalBtn" onclick="addToGoogleCalendarMain()" class="inline-flex items-center gap-2 text-xs font-semibold text-amber-800 hover:text-amber-950 transition-colors py-1.5 px-3 rounded-lg hover:bg-amber-100/50">
+          <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          Add to Google Calendar
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Hint Indicator -->
+    <a href="#story" class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-stone-400 hover:text-amber-600 transition-colors animate-bounce">
+      <span class="text-[10px] tracking-widest uppercase mb-1 font-semibold">Scroll</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </a>
+  </section>
+
+  <!-- =========================================================================
+       OUR STORY SECTION
+       ========================================================================= -->
+  <section id="story" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative">
+    <div class="text-center mb-16">
+      <span class="font-script text-3xl sm:text-4xl text-amber-600">The Journey of</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Our Love Story</h2>
+      <div class="w-16 h-0.5 bg-amber-500 mx-auto mt-3"></div>
+      <p class="font-serif italic text-stone-600 text-lg mt-4 max-w-xl mx-auto">
+        "When soul connects with soul, even the universe conspires to weave a sacred forever."
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Couple Portrait Card with Elegant Border Frame -->
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-amber-300 to-amber-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+        <div class="relative rounded-2xl overflow-hidden border-2 border-amber-300/70 shadow-2xl bg-white aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=80" alt="Shamika and Ananta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+            <div class="text-white">
+              <p class="font-script text-2xl text-amber-200">Shamika & Ananta</p>
+              <p class="text-xs uppercase tracking-wider font-light opacity-90">Pune, Maharashtra • Est. 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Narrative & Milestones -->
+      <div class="space-y-6">
+        <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-stone-800 leading-snug">
+          From a Serendipitous Coffee to Sacred Pheras
+        </h3>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          From a chance conversation at a cozy café to watching golden sunsets over the hills of Pune, our journey has been an enchanting tapestry of laughter, shared dreams, family warmth, and quiet understanding.
+        </p>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          As we take the sacred seven steps and embark on this eternal voyage of companionship, our celebration would simply be incomplete without the presence, warmth, and blessings of our dearest family and friends.
+        </p>
+
+        <!-- Timeline Milestones -->
+        <div class="border-l-2 border-amber-300 pl-4 space-y-4 pt-2">
+          <div class="relative">
+            <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-700">November 2023</div>
+            <div class="font-semibold text-stone-800 text-sm">A Serendipitous Meeting</div>
+            <div class="text-stone-500 text-xs mt-0.5">A simple coffee conversation that turned into hours of shared laughter and dreams.</div>
+          </div>
+          <div class="relative">
+            <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-700">December 2025</div>
+            <div class="font-semibold text-stone-800 text-sm">Under the Stars, She Said Yes!</div>
+            <div class="text-stone-500 text-xs mt-0.5">Under a canopy of stars with the Pune city lights shimmering below, a lifelong promise was sealed.</div>
+          </div>
+          <div class="relative">
+            <span class="absolute -left-[23px] top-1 w-3 h-3 rounded-full bg-amber-600 ring-4 ring-white"></span>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-700">December 2026</div>
+            <div class="font-semibold text-stone-800 text-sm">The Wedding Celebrations</div>
+            <div class="text-stone-500 text-xs mt-0.5">Stepping into a lifetime of love, laughter, and sacred traditions with you.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       EVENTS ITINERARY SECTION
+       ========================================================================= -->
+  <section id="itinerary" class="py-24 px-4 sm:px-6 lg:px-8 bg-amber-50/40 relative border-y border-amber-900/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="font-script text-3xl sm:text-4xl text-amber-600">Celebration</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Wedding Itinerary</h2>
+        <div class="w-16 h-0.5 bg-amber-500 mx-auto mt-3"></div>
+        <p class="font-serif italic text-stone-600 text-lg mt-3">
+          Join us as we revel in colors, music, and sacred traditions
+        </p>
+      </div>
+
+      <!-- Events Cards Grid (3 Core Events) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- 1. HALDI CEREMONY CARD -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-amber-200/90 shadow-md gold-box-shadow-hover flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-100 rounded-bl-full -mr-6 -mt-6 opacity-60"></div>
+          
+          <div>
+            <!-- Event Badge -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-100 border border-yellow-300 text-yellow-900 text-xs font-semibold mb-4">
+              <span>🌼</span> Haldi & Phoolon Ki Holi
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-stone-900">Haldi Ceremony</h3>
+            <p class="font-script text-xl text-yellow-700 mt-0.5">Sunlit Joy & Marigold Blessings</p>
+
+            <div class="my-5 border-t border-b border-stone-100 py-4 space-y-2.5 text-xs sm:text-sm text-stone-600">
+              <div class="flex items-center gap-2">
+                <span class="text-yellow-600 font-bold">📅</span>
+                <span class="font-semibold text-stone-800">Saturday, December 12, 2026</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-yellow-600 font-bold">⏰</span>
+                <span>10:30 AM Onwards</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-yellow-600 font-bold mt-0.5">📍</span>
+                <span>Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058</span>
+              </div>
+            </div>
+
+            <!-- Dress Code Suggestion -->
+            <div class="bg-yellow-50/80 rounded-xl p-3.5 border border-yellow-200/70 mb-6">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-yellow-800 flex items-center gap-1">
+                <span>👗</span> Dress Code
+              </div>
+              <p class="text-xs font-semibold text-stone-800 mt-0.5">Shades of Sunshine Yellow & Festive Florals</p>
+              <p class="text-[11px] text-stone-500 mt-0.5">Get ready to be drenched in haldi paste and fresh rose petals!</p>
+            </div>
+          </div>
+
+          <!-- Buttons: Google Maps & Add to Calendar -->
+          <div class="space-y-2 pt-2">
+            <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              View on Google Maps
+            </a>
+            <button onclick="addToCalendar('haldi')" class="w-full py-2 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium text-xs flex items-center justify-center gap-1.5 transition-colors">
+              <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              Add Haldi to Calendar
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. WEDDING CEREMONY (MUHURTHAM) CARD -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-amber-400/90 shadow-xl gold-box-shadow-hover flex flex-col justify-between relative overflow-hidden ring-1 ring-amber-400/40">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-rose-100 rounded-bl-full -mr-6 -mt-6 opacity-60"></div>
+          
+          <div>
+            <!-- Highlight Ribbon -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-100 border border-rose-300 text-rose-900 text-xs font-semibold mb-4">
+              <span>💍</span> The Main Wedding (Muhurtham)
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-stone-900">Sacred Pheras</h3>
+            <p class="font-script text-xl text-rose-700 mt-0.5">Eternal Vows & Saat Phere</p>
+
+            <div class="my-5 border-t border-b border-stone-100 py-4 space-y-2.5 text-xs sm:text-sm text-stone-600">
+              <div class="flex items-center gap-2">
+                <span class="text-rose-600 font-bold">📅</span>
+                <span class="font-semibold text-stone-800">Sunday, December 13, 2026</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-rose-600 font-bold">⏰</span>
+                <span>04:30 PM (Baraat) | 06:46 PM (Pheras)</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-600 font-bold mt-0.5">📍</span>
+                <span>Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058</span>
+              </div>
+            </div>
+
+            <!-- Dress Code Suggestion -->
+            <div class="bg-rose-50/80 rounded-xl p-3.5 border border-rose-200/70 mb-6">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-rose-800 flex items-center gap-1">
+                <span>👑</span> Dress Code
+              </div>
+              <p class="text-xs font-semibold text-stone-800 mt-0.5">Royal Traditional Festive & Silk Elegance</p>
+              <p class="text-[11px] text-stone-500 mt-0.5">Sherwanis, Bandhgalas, Kanjeevarams, and Regal Lehengas.</p>
+            </div>
+          </div>
+
+          <!-- Buttons: Google Maps & Add to Calendar -->
+          <div class="space-y-2 pt-2">
+            <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-amber-700 hover:bg-amber-800 text-white font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              View on Google Maps
+            </a>
+            <button onclick="addToCalendar('wedding')" class="w-full py-2 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium text-xs flex items-center justify-center gap-1.5 transition-colors">
+              <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              Add Wedding to Calendar
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. RECEPTION CARD -->
+        <div class="bg-white rounded-3xl p-6 sm:p-7 border border-amber-200/90 shadow-md gold-box-shadow-hover flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-100 rounded-bl-full -mr-6 -mt-6 opacity-60"></div>
+          
+          <div>
+            <!-- Event Badge -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-semibold mb-4">
+              <span>🥂</span> Grand Reception & Sangeet Night
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-stone-900">The Grand Reception</h3>
+            <p class="font-script text-xl text-emerald-700 mt-0.5">Dinner, Dance & Toast</p>
+
+            <div class="my-5 border-t border-b border-stone-100 py-4 space-y-2.5 text-xs sm:text-sm text-stone-600">
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">📅</span>
+                <span class="font-semibold text-stone-800">Sunday, December 13, 2026</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-emerald-600 font-bold">⏰</span>
+                <span>07:30 PM Onwards</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold mt-0.5">📍</span>
+                <span>Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058</span>
+              </div>
+            </div>
+
+            <!-- Dress Code Suggestion -->
+            <div class="bg-emerald-50/80 rounded-xl p-3.5 border border-emerald-200/70 mb-6">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1">
+                <span>✨</span> Dress Code
+              </div>
+              <p class="text-xs font-semibold text-stone-800 mt-0.5">Black Tie or Indo-Western Chic</p>
+              <p class="text-[11px] text-stone-500 mt-0.5">Tuxedos, Evening Gowns, Cocktail Sarees, and Modern Suits.</p>
+            </div>
+          </div>
+
+          <!-- Buttons: Google Maps & Add to Calendar -->
+          <div class="space-y-2 pt-2">
+            <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              View on Google Maps
+            </a>
+            <button onclick="addToCalendar('reception')" class="w-full py-2 px-4 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium text-xs flex items-center justify-center gap-1.5 transition-colors">
+              <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              Add Reception to Calendar
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PHOTO GALLERY WITH LIGHTBOX PREVIEW
+       ========================================================================= -->
+  <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="font-script text-3xl sm:text-4xl text-amber-600">Cherished</span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Moments of Love</h2>
+      <div class="w-16 h-0.5 bg-amber-500 mx-auto mt-3"></div>
+      <p class="font-serif italic text-stone-600 text-lg mt-3">
+        Capturing glances, laughter, and timeless celebrations
+      </p>
+    </div>
+
+    <!-- Responsive Mosaic Gallery Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+      
+      <!-- Photo 1 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(0)">
+        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Couple Portrait" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">Golden Hour by Lake Pichola</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(1)">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Wedding Floral Decor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">Floral Mandap & Royal Canopy</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(2)">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Ring Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">The Vows of Companionship</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(3)">
+        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80" alt="Mehndi Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">Mehndi Patterns & Henna Grace</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(4)">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Palace Courtyard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">Palace Arches & Candlelight</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 6 -->
+      <div class="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-amber-200/60" onclick="openLightbox(5)">
+        <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80" alt="Celebration Toast" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+        <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+            <span class="text-xl">🔍</span>
+            <p class="font-serif text-sm mt-1">To Endless Smiles & Togetherness</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PHOTO LIGHTBOX MODAL (Vanilla JS)
+       ========================================================================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/80 hover:text-white p-2 text-3xl focus:outline-none z-10" aria-label="Close Lightbox">
+      &times;
+    </button>
+    <button onclick="prevLightbox()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full focus:outline-none transition-colors" aria-label="Previous Photo">
+      &#10094;
+    </button>
+    <button onclick="nextLightbox()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full focus:outline-none transition-colors" aria-label="Next Photo">
+      &#10095;
+    </button>
+    
+    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+      <img id="lightboxImg" src="" alt="Enlarged Wedding Memory" class="max-h-[75vh] max-w-full rounded-xl object-contain shadow-2xl border border-white/10">
+      <p id="lightboxCaption" class="text-stone-300 font-serif italic text-base sm:text-lg mt-3 text-center"></p>
+      <span id="lightboxCounter" class="text-stone-400 text-xs tracking-widest uppercase mt-1">1 / 6</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       RSVP SECTION
+       ========================================================================= -->
+  <section id="rsvp" class="py-24 px-4 sm:px-6 lg:px-8 bg-pattern relative">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="font-script text-3xl sm:text-4xl text-amber-600">Kindly Respond</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Will You Join Us?</h2>
+        <div class="w-16 h-0.5 bg-amber-500 mx-auto mt-3"></div>
+        <p class="font-serif italic text-stone-600 text-lg mt-3">
+          Please let us know by October 15, 2027 so we can make your stay unforgettable.
+        </p>
+      </div>
+
+      <!-- RSVP Form Card -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 gold-box-shadow border border-amber-200/90 relative">
+        <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)" class="space-y-6">
+          
+          <!-- Full Name -->
+          <div>
+            <label for="guestName" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+              Full Name <span class="text-rose-500">*</span>
+            </label>
+            <input type="text" id="guestName" required placeholder="e.g. Priya & Vikram Malhotra" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all">
+          </div>
+
+          <!-- Contact: Phone / WhatsApp & Email -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="guestPhone" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                Phone / WhatsApp <span class="text-rose-500">*</span>
+              </label>
+              <input type="tel" id="guestPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all">
+            </div>
+            <div>
+              <label for="guestEmail" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                Email Address
+              </label>
+              <input type="email" id="guestEmail" placeholder="priya@example.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all">
+            </div>
+          </div>
+
+          <!-- Number of Attendees -->
+          <div>
+            <label for="attendeeCount" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+              Number of Attendees Attending <span class="text-rose-500">*</span>
+            </label>
+            <select id="attendeeCount" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none bg-white transition-all">
+              <option value="1">1 Person (Just Me)</option>
+              <option value="2" selected>2 Persons (Couple)</option>
+              <option value="3">3 Persons (With Family)</option>
+              <option value="4">4 Persons (Family)</option>
+              <option value="5+">5+ Persons (Family Group)</option>
+            </select>
+          </div>
+
+          <!-- Events Attending (Checkboxes) -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              Events You Will Grace <span class="text-rose-500">*</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-stone-50/50 cursor-pointer transition-colors">
+                <input type="checkbox" name="events" value="Haldi Ceremony" checked class="w-4 h-4 text-amber-600 rounded focus:ring-amber-400">
+                <span class="text-xs font-medium text-stone-800">Haldi Ceremony</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-stone-50/50 cursor-pointer transition-colors">
+                <input type="checkbox" name="events" value="Wedding (Muhurtham)" checked class="w-4 h-4 text-amber-600 rounded focus:ring-amber-400">
+                <span class="text-xs font-medium text-stone-800">Wedding Muhurtham</span>
+              </label>
+              <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-stone-50/50 cursor-pointer transition-colors">
+                <input type="checkbox" name="events" value="Grand Reception" checked class="w-4 h-4 text-amber-600 rounded focus:ring-amber-400">
+                <span class="text-xs font-medium text-stone-800">Grand Reception</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dietary / Wishes Note -->
+          <div>
+            <label for="guestWishes" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+              Dietary Preferences or Warm Wishes
+            </label>
+            <textarea id="guestWishes" rows="3" placeholder="e.g. Pure Vegetarian / Jain food preferred. Can't wait to dance with you both!" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all"></textarea>
+          </div>
+
+          <!-- Action Buttons: Send RSVP & WhatsApp Quick RSVP -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <button type="submit" id="submitRsvpBtn" class="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold text-xs tracking-widest uppercase shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+              <span>Send RSVP Confirmation</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+            <button type="button" onclick="sendViaWhatsApp()" class="w-full sm:w-auto py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs tracking-widest uppercase shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>RSVP via WhatsApp</span>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- RSVP Success Card / Modal Overlay -->
+        <div id="rsvpSuccessCard" class="hidden absolute inset-0 bg-white/95 rounded-3xl p-8 flex flex-col items-center justify-center text-center backdrop-blur-sm z-20">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mb-4 border border-emerald-300">
+            ✓
+          </div>
+          <h3 class="font-display text-2xl font-bold text-stone-900">Thank You For Your RSVP!</h3>
+          <p id="rsvpSuccessMsg" class="font-serif italic text-stone-600 text-lg mt-2 max-w-md">
+            We are overjoyed to celebrate our special day with you. Your presence means the world to us!
+          </p>
+          <div class="mt-6 flex gap-3">
+            <button onclick="resetRsvpForm()" class="px-6 py-2.5 rounded-full border border-stone-300 hover:bg-stone-50 text-xs font-semibold text-stone-700 tracking-wider uppercase transition-colors">
+              Submit Another RSVP
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER & DETAILS SECTION
+       ========================================================================= -->
+  <footer id="details" class="bg-stone-900 text-stone-300 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t-2 border-amber-600/30">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      
+      <!-- Monogram in Circle -->
+      <div class="w-16 h-16 rounded-full border border-amber-500/60 mx-auto flex items-center justify-center bg-stone-800/80 mb-6 shadow-lg shadow-amber-900/20">
+        <span class="font-display text-lg font-bold text-amber-400 tracking-wider">A & R</span>
+      </div>
+
+      <h2 class="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">Shamika & Ananta</h2>
+      <p class="font-serif italic text-amber-300/80 text-lg mt-1">Oasis Banquets • Pune, Maharashtra • December 2026</p>
+
+      <!-- Wedding Hashtag Pill with Copy Functionality -->
+      <div class="my-8">
+        <button onclick="copyHashtag()" id="copyHashtagBtn" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-stone-800/90 border border-amber-500/40 hover:border-amber-400 text-amber-300 text-xs sm:text-sm font-semibold tracking-wider transition-all group">
+          <span class="text-amber-400">#</span>
+          <span id="weddingHashtagText">Shaan</span>
+          <svg class="w-4 h-4 text-stone-400 group-hover:text-amber-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+        </button>
+        <div id="hashtagToast" class="text-[11px] text-amber-400 mt-1.5 opacity-0 transition-opacity">Copied hashtag to clipboard!</div>
+      </div>
+
+      <!-- Blessings from Families -->
+      <div class="border-t border-stone-800 pt-8 max-w-xl mx-auto space-y-2">
+        <p class="font-serif italic text-sm text-stone-400">
+          "With the affectionate blessings of our beloved parents and elders"
+        </p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-amber-200/90">
+          The Thakur & Tamboli Families
+        </p>
+      </div>
+
+      <!-- Quick Back to Top -->
+      <div class="mt-12 pt-6 border-t border-stone-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500">
+        <p>© 2026 Shamika & Ananta Wedding. Built with love.</p>
+        <a href="#hero" class="mt-4 sm:mt-0 hover:text-amber-400 flex items-center gap-1 transition-colors">
+          <span>Back to Top</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       JAVASCRIPT: CONFIGURATION & INTERACTIVITY
+       ========================================================================= -->
+  <script>
+    /* =========================================================================
+       1. WEDDING CONFIGURATION OBJECT
+       Easily customize names, dates, venues, links, and details here!
+       ========================================================================= */
+    const WEDDING_CONFIG = {
+      couple: {
+        brideName: "Shamika Thakur",
+        groomName: "Ananta Tamboli",
+        brideShort: "Shamika",
+        groomShort: "Ananta",
+        monogram: "A & R",
+        hashtag: "ShamikaFoundHerAnanta"
+      },
+      weddingDateIso: "2026-12-13T18:46:00", // Year-Month-DayTHour:Minute:Second
+      weddingDateFormatted: "Sunday, December 13, 2026",
+      venueTagline: "Oasis Banquets, Chandani Chowk, Warje • Pune, Maharashtra",
+      venueAddress: "Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058",
+      googleMapsUrl: "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f",
+      invitationBlessing: "॥ श्री गणेशाय नमः ॥",
+      rsvp: {
+        // WhatsApp number with country code (e.g., 919876543210 for India)
+        whatsappPhone: "919850530250"
+      },
+      galleryImages: [
+        {
+          src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
+          caption: "Golden Hour by Lake Pichola"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
+          caption: "Floral Mandap & Royal Canopy"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85",
+          caption: "The Vows of Companionship"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85",
+          caption: "Mehndi Patterns & Henna Grace"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=85",
+          caption: "Palace Arches & Candlelight"
+        },
+        {
+          src: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=85",
+          caption: "To Endless Smiles & Togetherness"
+        }
+      ]
+    };
+
+    /* =========================================================================
+       2. LIVE COUNTDOWN TIMER
+       ========================================================================= */
+    function updateCountdown() {
+      const targetDate = new Date(WEDDING_CONFIG.weddingDateIso).getTime();
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      const daysEl = document.getElementById('countdownDays');
+      const hoursEl = document.getElementById('countdownHours');
+      const minutesEl = document.getElementById('countdownMinutes');
+      const secondsEl = document.getElementById('countdownSeconds');
+
+      if (difference <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    /* =========================================================================
+       3. DYNAMIC COLOR THEME SWITCHER (Emerald, Burgundy, Terracotta)
+       ========================================================================= */
+    const themeColors = {
+      emerald: { hex: '#083b2b', label: 'Emerald' },
+      burgundy: { hex: '#4e121d', label: 'Burgundy' },
+      terracotta: { hex: '#8c3b24', label: 'Terracotta' }
+    };
+
+    function setTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('wedding_theme', themeName);
+      
+      const indicator = document.getElementById('themeColorIndicator');
+      const label = document.getElementById('currentThemeLabel');
+      if (indicator && themeColors[themeName]) {
+        indicator.style.backgroundColor = themeColors[themeName].hex;
+      }
+      if (label && themeColors[themeName]) {
+        label.textContent = themeColors[themeName].label;
+      }
+
+      // Close menu
+      document.getElementById('themeMenu').classList.add('hidden');
+    }
+
+    // Toggle Dropdown
+    document.getElementById('themeToggleBtn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.getElementById('themeMenu').classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', () => {
+      document.getElementById('themeMenu').classList.add('hidden');
+    });
+
+    // Check saved theme or default
+    const savedTheme = localStorage.getItem('wedding_theme') || 'emerald';
+    setTheme(savedTheme);
+
+    /* =========================================================================
+       4. AMBIENT BACKGROUND MUSIC CONTROLLER (with Web Audio Tanpura Fallback)
+       ========================================================================= */
+    const audioEl = document.getElementById('weddingAudio');
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicStatusText = document.getElementById('musicStatusText');
+    let isPlaying = false;
+    let synthContext = null;
+    let synthGain = null;
+    let synthOscillators = [];
+
+    function startSynthTanpura() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!synthContext) {
+          synthContext = new AudioCtx();
+        }
+        if (synthContext.state === 'suspended') {
+          synthContext.resume();
+        }
+        synthGain = synthContext.createGain();
+        synthGain.gain.setValueAtTime(0.01, synthContext.currentTime);
+        synthGain.gain.exponentialRampToValueAtTime(0.08, synthContext.currentTime + 1.5);
+        synthGain.connect(synthContext.destination);
+
+        // Indian classical Sa-Pa-Sa Tanpura harmonics (D3: 146.83Hz, A3: 220Hz, D4: 293.66Hz)
+        const freqs = [146.83, 220.00, 293.66, 440.00];
+        synthOscillators = freqs.map((f, i) => {
+          const osc = synthContext.createOscillator();
+          osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(f, synthContext.currentTime);
+          osc.detune.setValueAtTime((i - 1.5) * 4, synthContext.currentTime);
+          const oscGain = synthContext.createGain();
+          oscGain.gain.value = 0.2;
+          osc.connect(oscGain);
+          oscGain.connect(synthGain);
+          osc.start();
+          return osc;
+        });
+      } catch (err) {
+        console.warn("Web Audio ambient fallback error:", err);
+      }
+    }
+
+    function stopSynthTanpura() {
+      if (synthGain && synthContext) {
+        synthGain.gain.exponentialRampToValueAtTime(0.001, synthContext.currentTime + 0.8);
+        setTimeout(() => {
+          synthOscillators.forEach(osc => {
+            try { osc.stop(); } catch(e) {}
+          });
+          synthOscillators = [];
+        }, 900);
+      }
+    }
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        // Attempt external audio playback, with automatic graceful fallback to Indian Tanpura synth
+        audioEl.play().then(() => {
+          isPlaying = true;
+          musicIcon.textContent = "🔊";
+          musicStatusText.textContent = "Music: On";
+          musicBtn.classList.add('ring-2', 'ring-amber-400');
+        }).catch((err) => {
+          console.warn("External audio source failed or blocked, activating ambient tanpura synth:", err);
+          startSynthTanpura();
+          isPlaying = true;
+          musicIcon.textContent = "🔊";
+          musicStatusText.textContent = "Music: On";
+          musicBtn.classList.add('ring-2', 'ring-amber-400');
+        });
+      } else {
+        audioEl.pause();
+        stopSynthTanpura();
+        isPlaying = false;
+        musicIcon.textContent = "🎵";
+        musicStatusText.textContent = "Music: Off";
+        musicBtn.classList.remove('ring-2', 'ring-amber-400');
+      }
+    }
+    musicBtn.addEventListener('click', toggleMusic);
+
+    /* =========================================================================
+       5. MOBILE DRAWER NAVIGATION
+       ========================================================================= */
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    /* =========================================================================
+       6. PHOTO GALLERY LIGHTBOX CONTROLLER
+       ========================================================================= */
+    let currentPhotoIndex = 0;
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+
+    function openLightbox(index) {
+      currentPhotoIndex = index;
+      updateLightboxContent();
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.add('hidden');
+      lightboxModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    function nextLightbox() {
+      currentPhotoIndex = (currentPhotoIndex + 1) % WEDDING_CONFIG.galleryImages.length;
+      updateLightboxContent();
+    }
+
+    function prevLightbox() {
+      currentPhotoIndex = (currentPhotoIndex - 1 + WEDDING_CONFIG.galleryImages.length) % WEDDING_CONFIG.galleryImages.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = WEDDING_CONFIG.galleryImages[currentPhotoIndex];
+      lightboxImg.src = item.src;
+      lightboxCaption.textContent = item.caption;
+      lightboxCounter.textContent = `${currentPhotoIndex + 1} / ${WEDDING_CONFIG.galleryImages.length}`;
+    }
+
+    // Keyboard support for Lightbox (Esc, Left, Right)
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextLightbox();
+        if (e.key === 'ArrowLeft') prevLightbox();
+      }
+    });
+
+    // Close when clicking outside image
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    });
+
+    /* =========================================================================
+       7. ADD TO GOOGLE CALENDAR HELPERS
+       ========================================================================= */
+    function addToGoogleCalendarMain() {
+      const title = encodeURIComponent("Wedding of Shamika & Ananta");
+      const details = encodeURIComponent("We joyfully invite you to celebrate our wedding at Oasis Banquets, Pune.");
+      const location = encodeURIComponent("Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058");
+      // Format: YYYYMMDDTHHMMSSZ (Dec 13, 2026 at 18:46 IST is 13:16 UTC)
+      const dates = "20261213T131600Z/20261213T190000Z";
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
+      window.open(url, '_blank');
+    }
+
+    function addToCalendar(eventKey) {
+      let title = "";
+      const location = encodeURIComponent("Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058");
+      let dates = "";
+      let details = "";
+
+      if (eventKey === 'haldi') {
+        title = encodeURIComponent("Haldi Ceremony - Shamika & Ananta");
+        dates = "20261212T050000Z/20261212T090000Z";
+        details = encodeURIComponent("Haldi & Phoolon Ki Holi at Oasis Banquets, Pune. Dress code: Yellow & Festive Florals.");
+      } else if (eventKey === 'wedding') {
+        title = encodeURIComponent("Wedding Ceremony (Muhurtham) - Shamika & Ananta");
+        dates = "20261213T110000Z/20261213T170000Z";
+        details = encodeURIComponent("Sacred Pheras & Baraat at Oasis Banquets, Pune. Dress code: Royal Traditional Festive.");
+      } else if (eventKey === 'reception') {
+        title = encodeURIComponent("Grand Reception - Shamika & Ananta");
+        dates = "20261213T140000Z/20261213T190000Z";
+        details = encodeURIComponent("Celebration Dinner & Toast at Oasis Banquets, Pune. Dress code: Black Tie or Indo-Western Chic.");
+      }
+
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
+      window.open(url, '_blank');
+    }
+
+    /* =========================================================================
+       8. RSVP FORM SUBMISSION & WHATSAPP INTEGRATION
+       ========================================================================= */
+    function getSelectedEvents() {
+      const checkedBoxes = document.querySelectorAll('input[name="events"]:checked');
+      return Array.from(checkedBoxes).map(cb => cb.value).join(', ') || 'All Events';
+    }
+
+    function handleRsvpSubmit(e) {
+      e.preventDefault();
+      
+      const guestName = document.getElementById('guestName').value.trim();
+      const count = document.getElementById('attendeeCount').value;
+      const events = getSelectedEvents();
+
+      // Trigger Confetti Celebration burst!
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#c99834', '#083b2b', '#ffffff', '#e5bd68']
+        });
+      }
+
+      // Show Success State Card
+      const successCard = document.getElementById('rsvpSuccessCard');
+      const successMsg = document.getElementById('rsvpSuccessMsg');
+      successMsg.innerHTML = `Dearest <strong>${guestName}</strong>, thank you! We have noted your confirmation for <strong>${count} guest(s)</strong> attending <strong>${events}</strong>. We eagerly await your arrival at Oasis Banquets, Pune!`;
+      successCard.classList.remove('hidden');
+    }
+
+    function resetRsvpForm() {
+      document.getElementById('rsvpForm').reset();
+      document.getElementById('rsvpSuccessCard').classList.add('hidden');
+    }
+
+    function sendViaWhatsApp() {
+      const guestName = document.getElementById('guestName').value.trim() || 'A Wedding Guest';
+      const count = document.getElementById('attendeeCount').value;
+      const events = getSelectedEvents();
+      const wishes = document.getElementById('guestWishes').value.trim();
+
+      let message = `Namaste Shamika & Ananta! ✨\n\nI am delighted to RSVP for your wedding celebrations at Oasis Banquets, Pune!\n\n• Guest: ${guestName}\n• Attendees: ${count}\n• Events Attending: ${events}`;
+      if (wishes) {
+        message += `\n• Note: ${wishes}`;
+      }
+      message += `\n\nLooking forward to celebrating with you! 🪔💍`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${WEDDING_CONFIG.rsvp.whatsappPhone}?text=${encodedMessage}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    /* =========================================================================
+       9. HASHTAG CLIPBOARD COPY
+       ========================================================================= */
+    function copyHashtag() {
+      const hashtag = "#" + WEDDING_CONFIG.couple.hashtag;
+      navigator.clipboard.writeText(hashtag).then(() => {
+        const toast = document.getElementById('hashtagToast');
+        toast.style.opacity = '1';
+        setTimeout(() => {
+          toast.style.opacity = '0';
+        }, 2500);
+      }).catch(err => {
+        console.warn("Clipboard copy error:", err);
+      });
+    }
+
+    /* =========================================================================
+       10. NAVBAR SCROLL SHADOW DYNAMICS & INITIALIZATION
+       ========================================================================= */
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md', 'bg-white/95');
+      } else {
+        navbar.classList.remove('shadow-md');
+      }
+    });
+
+    /* =========================================================================
+       11. DYNAMIC DATA BINDING FROM WEDDING_CONFIG
+       Populates names, dates, hashtag and title from the config object
+       ========================================================================= */
+    function initWeddingData() {
+      const c = WEDDING_CONFIG.couple;
+      if (c) {
+        document.title = `${c.brideShort} & ${c.groomShort} — Wedding Celebration Invitation`;
+        const bride = document.getElementById('brideHeroName');
+        const groom = document.getElementById('groomHeroName');
+        const monogram = document.getElementById('navMonogram');
+        const hashtag = document.getElementById('weddingHashtagText');
+        const weddingDate = document.getElementById('heroWeddingDate');
+        const location = document.getElementById('heroLocation');
+        const blessing = document.getElementById('heroBlessing');
+        
+        if (bride) bride.textContent = c.brideShort;
+        if (groom) groom.textContent = c.groomShort;
+        if (monogram) monogram.textContent = c.monogram;
+        if (hashtag) hashtag.textContent = c.hashtag;
+        if (weddingDate) weddingDate.textContent = WEDDING_CONFIG.weddingDateFormatted;
+        if (location) location.textContent = WEDDING_CONFIG.venueTagline;
+        if (blessing) blessing.textContent = WEDDING_CONFIG.invitationBlessing;
+      }
+    }
+    // Initialize immediately
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWeddingData);
+    } else {
+      initWeddingData();
+    }
+  </script>
+</body>
+</html>

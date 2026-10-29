@@ -1,0 +1,68 @@
+# ==============================================================================
+# Private Wedding Invitation Website
+# Disallow all web crawlers, search engines, archivers, and AI scrapers
+# ==============================================================================
+
+User-agent: *
+Disallow: /
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: Googlebot-Mobile
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+
+User-agent: MSNBot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# Archivers (Wayback Machine, etc.)
+User-agent: ia_archiver
+Disallow: /
+
+# Social Crawlers & Scrapers
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+# AI Crawlers & Scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
