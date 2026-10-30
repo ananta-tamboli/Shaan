@@ -258,8 +258,9 @@
   <!-- =========================================================================
        AUDIO ELEMENT FOR AMBIENT BACKGROUND MUSIC
        ========================================================================= -->
-  <audio id="weddingAudio" loop preload="none">
-    <!-- Web Audio Tanpura Synth provides soothing ambient drone without external 403 network dependencies -->
+  <audio id="weddingAudio" loop preload="metadata">
+    <source id="audioSource" src="audio/jashn-e-bahara.mp3" type="audio/mp3">
+    <!-- Web Audio Tanpura Synth acts as dynamic zero-network offline fallback -->
   </audio>
 
   <!-- =========================================================================
@@ -321,11 +322,23 @@
           </div>
         </div>
 
-        <!-- Music Play/Pause Toggle Button -->
-        <button id="musicToggleBtn" type="button" title="Play Ambient Music" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border border-amber-300/80 bg-gradient-to-r from-amber-100 to-amber-50 hover:from-amber-200 hover:to-amber-100 text-amber-900 transition-all shadow-sm">
-          <span id="musicIcon" class="text-sm">🎵</span>
-          <span id="musicStatusText" class="hidden sm:inline text-[11px] uppercase tracking-wider">Music: Off</span>
-        </button>
+        <!-- Music Controller: Play/Pause & Song Selector Pill -->
+        <div class="flex items-center bg-gradient-to-r from-amber-100/95 to-amber-50/95 border border-amber-300/80 rounded-full p-0.5 sm:p-1 shadow-sm backdrop-blur-sm">
+          <button id="musicToggleBtn" type="button" title="Play / Pause Ambient Music" class="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-700 hover:bg-amber-800 text-white transition-all shadow-sm">
+            <span id="musicIcon" class="text-xs">▶</span>
+            <span id="musicStatusText" class="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold">Play</span>
+          </button>
+          
+          <div class="relative flex items-center pr-1 pl-1">
+            <select id="songSelect" aria-label="Select Wedding Soundtrack" class="bg-transparent text-amber-950 text-[11px] sm:text-xs font-medium pl-1 pr-4 py-0.5 rounded cursor-pointer focus:outline-none max-w-[105px] xs:max-w-[140px] sm:max-w-[190px] md:max-w-[220px] truncate appearance-none font-sans">
+              <option value="audio/jashn-e-bahara.mp3" selected>🎵 Jashn-e-Baharaa (Flute) [Default]</option>
+              <option value="audio/royal-strings.mp3">🎻 Royal Strings & Oboe (A.R. Rahman)</option>
+              <option value="audio/in-lamhon-ke-daaman-mein.mp3">💫 In Lamhon Ke Daaman Mein (Romantic)</option>
+              <option value="synth:tanpura">🪔 Sacred Tanpura Drone (Synth)</option>
+            </select>
+            <span class="pointer-events-none absolute right-1 text-[8px] text-amber-800 font-bold">▼</span>
+          </div>
+        </div>
 
         <!-- Mobile Menu Hamburger -->
         <button id="mobileMenuBtn" type="button" class="md:hidden p-2 rounded-lg text-stone-700 hover:text-amber-800 focus:outline-none" aria-label="Toggle Navigation">
@@ -335,13 +348,24 @@
     </div>
 
     <!-- Mobile Slide-down Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 mt-2 pt-3 pb-2 px-2 flex flex-col space-y-2 text-center text-xs uppercase tracking-widest font-semibold text-stone-700 bg-white/95 rounded-b-xl shadow-lg">
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200 mt-2 pt-3 pb-3 px-3 flex flex-col space-y-2 text-center text-xs uppercase tracking-widest font-semibold text-stone-700 bg-white/95 rounded-b-xl shadow-lg">
       <a href="#hero" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Home</a>
       <a href="#story" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Our Story</a>
       <a href="#itinerary" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Events Itinerary</a>
       <a href="#gallery" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Moments</a>
       <a href="#rsvp" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">RSVP</a>
       <a href="#details" class="py-2 hover:bg-amber-50 rounded-lg" onclick="toggleMobileMenu()">Venue & Details</a>
+
+      <!-- Mobile Soundtrack Quick Selector -->
+      <div class="pt-2 border-t border-stone-200 text-left normal-case">
+        <label for="mobileSongSelect" class="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Wedding Soundtrack</label>
+        <select id="mobileSongSelect" class="w-full text-xs font-sans p-2 rounded-lg border border-amber-300 bg-amber-50/70 text-amber-950 focus:ring-1 focus:ring-amber-500">
+          <option value="audio/jashn-e-bahara.mp3" selected>🎵 Jashn-e-Baharaa (Flute) [Default]</option>
+          <option value="audio/royal-strings.mp3">🎻 Royal Strings & Oboe (A.R. Rahman)</option>
+          <option value="audio/in-lamhon-ke-daaman-mein.mp3">💫 In Lamhon Ke Daaman Mein (Romantic)</option>
+          <option value="synth:tanpura">🪔 Sacred Tanpura Drone (Synth)</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -1006,6 +1030,15 @@
       venueAddress: "Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058",
       googleMapsUrl: "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f",
       invitationBlessing: "॥ श्री गणेशाय नमः ॥",
+      soundtrack: {
+        defaultTrack: "audio/jashn-e-bahara.mp3",
+        tracks: [
+          { value: "audio/jashn-e-bahara.mp3", label: "🎵 Jashn-e-Baharaa (Flute) [Default]" },
+          { value: "audio/royal-strings.mp3", label: "🎻 Royal Strings & Oboe (A.R. Rahman)" },
+          { value: "audio/in-lamhon-ke-daaman-mein.mp3", label: "💫 In Lamhon Ke Daaman Mein (Romantic)" },
+          { value: "synth:tanpura", label: "🪔 Sacred Tanpura Drone (Live Synth)" }
+        ]
+      },
       rsvp: {
         // WhatsApp number with country code (e.g., 919876543210 for India)
         whatsappPhone: "919850530250"
@@ -1113,16 +1146,51 @@
     setTheme(savedTheme);
 
     /* =========================================================================
-       4. AMBIENT BACKGROUND MUSIC CONTROLLER (Web Audio Tanpura Synthesizer)
+       4. AMBIENT BACKGROUND MUSIC CONTROLLER
+       Supports multi-track selection with Jashn-e-Baharaa instrumental as default,
+       and Web Audio Tanpura Synthesizer as live ambient fallback.
        ========================================================================= */
     const musicBtn = document.getElementById('musicToggleBtn');
     const musicIcon = document.getElementById('musicIcon');
     const musicStatusText = document.getElementById('musicStatusText');
+    const weddingAudio = document.getElementById('weddingAudio');
+    const songSelect = document.getElementById('songSelect');
+    const mobileSongSelect = document.getElementById('mobileSongSelect');
+
     let isPlaying = false;
     let synthContext = null;
     let synthGain = null;
     let synthOscillators = [];
     let stopTimeoutId = null;
+
+    const DEFAULT_TRACK = (WEDDING_CONFIG.soundtrack && WEDDING_CONFIG.soundtrack.defaultTrack) || 'audio/jashn-e-bahara.mp3';
+    let currentTrack = localStorage.getItem('wedding_song') || DEFAULT_TRACK;
+
+    function syncDropdowns(val) {
+      if (songSelect && songSelect.value !== val) songSelect.value = val;
+      if (mobileSongSelect && mobileSongSelect.value !== val) mobileSongSelect.value = val;
+    }
+
+    // Set initial dropdown & audio source
+    syncDropdowns(currentTrack);
+    if (weddingAudio && currentTrack !== 'synth:tanpura') {
+      weddingAudio.src = currentTrack;
+    }
+
+    function setMusicUiState(active) {
+      isPlaying = active;
+      if (musicIcon) musicIcon.textContent = active ? "⏸" : "▶";
+      if (musicStatusText) musicStatusText.textContent = active ? "Pause" : "Play";
+      if (musicBtn) {
+        if (active) {
+          musicBtn.classList.add('ring-2', 'ring-amber-400', 'bg-amber-800');
+          musicBtn.classList.remove('bg-amber-700');
+        } else {
+          musicBtn.classList.remove('ring-2', 'ring-amber-400', 'bg-amber-800');
+          musicBtn.classList.add('bg-amber-700');
+        }
+      }
+    }
 
     function startSynthTanpura() {
       try {
@@ -1184,22 +1252,76 @@
       }
     }
 
-    function toggleMusic() {
-      if (!isPlaying) {
+    function playTrack(trackValue) {
+      if (trackValue === 'synth:tanpura') {
+        if (weddingAudio) weddingAudio.pause();
         startSynthTanpura();
-        isPlaying = true;
-        musicIcon.textContent = "🔊";
-        musicStatusText.textContent = "Music: On";
-        musicBtn.classList.add('ring-2', 'ring-amber-400');
+        setMusicUiState(true);
       } else {
         stopSynthTanpura();
-        isPlaying = false;
-        musicIcon.textContent = "🎵";
-        musicStatusText.textContent = "Music: Off";
-        musicBtn.classList.remove('ring-2', 'ring-amber-400');
+        if (weddingAudio) {
+          if (!weddingAudio.src || !weddingAudio.src.includes(trackValue)) {
+            weddingAudio.src = trackValue;
+          }
+          const playPromise = weddingAudio.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                setMusicUiState(true);
+              })
+              .catch(err => {
+                console.warn("Audio element play was prevented or failed:", err);
+                // Graceful fallback to built-in ambient synth
+                startSynthTanpura();
+                setMusicUiState(true);
+              });
+          }
+        }
       }
     }
-    musicBtn.addEventListener('click', toggleMusic);
+
+    function pauseTrack() {
+      if (weddingAudio) weddingAudio.pause();
+      stopSynthTanpura();
+      setMusicUiState(false);
+    }
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        playTrack(currentTrack);
+      } else {
+        pauseTrack();
+      }
+    }
+
+    function handleSongSelection(newTrack) {
+      currentTrack = newTrack;
+      localStorage.setItem('wedding_song', newTrack);
+      syncDropdowns(newTrack);
+
+      if (isPlaying) {
+        playTrack(newTrack);
+      } else if (newTrack !== 'synth:tanpura' && weddingAudio) {
+        weddingAudio.src = newTrack;
+        weddingAudio.load();
+      }
+    }
+
+    if (musicBtn) musicBtn.addEventListener('click', toggleMusic);
+    if (songSelect) songSelect.addEventListener('change', (e) => handleSongSelection(e.target.value));
+    if (mobileSongSelect) mobileSongSelect.addEventListener('change', (e) => handleSongSelection(e.target.value));
+
+    if (weddingAudio) {
+      weddingAudio.addEventListener('ended', () => {
+        if (!weddingAudio.loop) setMusicUiState(false);
+      });
+      weddingAudio.addEventListener('error', () => {
+        console.warn("Audio file error, falling back to Tanpura synth.");
+        if (isPlaying) {
+          startSynthTanpura();
+        }
+      });
+    }
 
     /* =========================================================================
        5. MOBILE DRAWER NAVIGATION
