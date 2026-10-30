@@ -196,6 +196,38 @@
     .theme-border-accent {
       border-color: var(--color-accent);
     }
+    .theme-btn-primary {
+      background: var(--theme-gradient) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 15px -3px var(--color-accent-glow);
+      transition: all 0.3s ease;
+    }
+    .theme-btn-primary:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -4px var(--color-accent-glow);
+    }
+    .theme-btn-secondary {
+      background-color: var(--color-bg-card) !important;
+      color: var(--color-text-main) !important;
+      border-color: var(--color-accent) !important;
+    }
+    .theme-btn-secondary:hover {
+      background-color: var(--color-bg-alt) !important;
+    }
+    .theme-digit {
+      color: var(--color-primary) !important;
+    }
+    .theme-digit-sec {
+      color: var(--color-accent) !important;
+    }
+    .theme-countdown-card {
+      background-color: var(--color-bg-alt) !important;
+      border-color: var(--color-border) !important;
+    }
+    .theme-divider-line {
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+    }
 
     /* Mandala rotating watermark */
     .mandala-watermark {
@@ -227,7 +259,7 @@
        AUDIO ELEMENT FOR AMBIENT BACKGROUND MUSIC
        ========================================================================= -->
   <audio id="weddingAudio" loop preload="none">
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_c8404534eb.mp3?filename=indian-flute-meditation-ambient-111164.mp3" type="audio/mp3">
+    <!-- Web Audio Tanpura Synth provides soothing ambient drone without external 403 network dependencies -->
   </audio>
 
   <!-- =========================================================================
@@ -238,9 +270,9 @@
       <!-- Monogram Logo -->
       <a href="#hero" class="group flex items-center gap-2">
         <div class="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-50/50 group-hover:scale-105 transition-transform">
-          <span id="navMonogram" class="font-display text-sm font-bold text-amber-700 tracking-wider">A & R</span>
+          <span id="navMonogram" class="font-display text-sm font-bold text-amber-700 tracking-wider">S & A</span>
         </div>
-        <span class="font-script text-2xl text-amber-900 hidden sm:inline">Shamika & Ananta</span>
+        <span id="navCoupleName" class="font-script text-2xl text-amber-900 hidden sm:inline">Shamika & Ananta</span>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -387,37 +419,37 @@
 
         <div class="grid grid-cols-4 gap-2.5 sm:gap-4 text-center">
           <!-- Days -->
-          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
-            <span id="countdownDays" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Days</span>
+          <div class="theme-countdown-card rounded-xl p-3 sm:p-4 border flex flex-col items-center">
+            <span id="countdownDays" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold theme-digit">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">Days</span>
           </div>
 
           <!-- Hours -->
-          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
-            <span id="countdownHours" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Hours</span>
+          <div class="theme-countdown-card rounded-xl p-3 sm:p-4 border flex flex-col items-center">
+            <span id="countdownHours" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold theme-digit">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">Hours</span>
           </div>
 
           <!-- Minutes -->
-          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
-            <span id="countdownMinutes" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-900">00</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Mins</span>
+          <div class="theme-countdown-card rounded-xl p-3 sm:p-4 border flex flex-col items-center">
+            <span id="countdownMinutes" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold theme-digit">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">Mins</span>
           </div>
 
           <!-- Seconds -->
-          <div class="bg-amber-50/60 rounded-xl p-3 sm:p-4 border border-amber-200/60 flex flex-col items-center">
-            <span id="countdownSeconds" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold text-amber-600 animate-pulse-subtle">00</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-amber-700/80 mt-1 font-medium">Secs</span>
+          <div class="theme-countdown-card rounded-xl p-3 sm:p-4 border flex flex-col items-center">
+            <span id="countdownSeconds" class="font-display text-2xl sm:text-4xl md:text-5xl font-bold theme-digit-sec animate-pulse-subtle">00</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">Secs</span>
           </div>
         </div>
       </div>
 
       <!-- Call to Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-        <a href="#rsvp" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-medium text-sm tracking-wider uppercase shadow-lg shadow-amber-600/30 hover:shadow-xl transition-all duration-300 text-center">
+        <a href="#rsvp" class="w-full sm:w-auto px-8 py-3.5 rounded-full theme-btn-primary font-medium text-sm tracking-wider uppercase shadow-lg hover:shadow-xl transition-all duration-300 text-center">
           RSVP With Us
         </a>
-        <a href="#itinerary" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/90 hover:bg-amber-50/80 text-stone-800 border border-amber-300 font-medium text-sm tracking-wider uppercase shadow-sm transition-all text-center">
+        <a href="#itinerary" class="w-full sm:w-auto px-8 py-3.5 rounded-full theme-btn-secondary border font-medium text-sm tracking-wider uppercase shadow-sm transition-all text-center">
           Explore Itinerary
         </a>
       </div>
@@ -700,7 +732,7 @@
         <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
           <div class="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
             <span class="text-xl">🔍</span>
-            <p class="font-serif text-sm mt-1">Golden Hour by Lake Pichola</p>
+            <p class="font-serif text-sm mt-1">Golden Moments in Pune</p>
           </div>
         </div>
       </div>
@@ -793,8 +825,8 @@
         <span class="font-script text-3xl sm:text-4xl text-amber-600">Kindly Respond</span>
         <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Will You Join Us?</h2>
         <div class="w-16 h-0.5 bg-amber-500 mx-auto mt-3"></div>
-        <p class="font-serif italic text-stone-600 text-lg mt-3">
-          Please let us know by October 15, 2027 so we can make your stay unforgettable.
+        <p id="rsvpDeadlineText" class="font-serif italic text-stone-600 text-lg mt-3">
+          Please kindly respond by November 20, 2026 to celebrate with us on December 13, 2026.
         </p>
       </div>
 
@@ -845,7 +877,7 @@
             <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
               Events You Will Grace <span class="text-rose-500">*</span>
             </label>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="eventsCheckboxContainer">
               <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:border-amber-400 bg-stone-50/50 cursor-pointer transition-colors">
                 <input type="checkbox" name="events" value="Haldi Ceremony" checked class="w-4 h-4 text-amber-600 rounded focus:ring-amber-400">
                 <span class="text-xs font-medium text-stone-800">Haldi Ceremony</span>
@@ -859,6 +891,7 @@
                 <span class="text-xs font-medium text-stone-800">Grand Reception</span>
               </label>
             </div>
+            <p id="eventErrorMsg" class="hidden text-rose-600 text-xs mt-1.5 font-semibold">⚠️ Please select at least one ceremony to attend.</p>
           </div>
 
           <!-- Dietary / Wishes Note -->
@@ -866,12 +899,12 @@
             <label for="guestWishes" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
               Dietary Preferences or Warm Wishes
             </label>
-            <textarea id="guestWishes" rows="3" placeholder="e.g. Pure Vegetarian / Jain food preferred. Can't wait to dance with you both!" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all"></textarea>
+            <textarea id="guestWishes" rows="3" placeholder="e.g. Pure Vegetarian / Jain food preferred. Can't wait to celebrate with you both!" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-stone-800 text-sm outline-none transition-all"></textarea>
           </div>
 
           <!-- Action Buttons: Send RSVP & WhatsApp Quick RSVP -->
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
-            <button type="submit" id="submitRsvpBtn" class="w-full sm:flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold text-xs tracking-widest uppercase shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+            <button type="submit" id="submitRsvpBtn" class="w-full sm:flex-1 py-3.5 px-6 rounded-xl theme-btn-primary font-semibold text-xs tracking-widest uppercase shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
               <span>Send RSVP Confirmation</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
@@ -911,10 +944,10 @@
       
       <!-- Monogram in Circle -->
       <div class="w-16 h-16 rounded-full border border-amber-500/60 mx-auto flex items-center justify-center bg-stone-800/80 mb-6 shadow-lg shadow-amber-900/20">
-        <span class="font-display text-lg font-bold text-amber-400 tracking-wider">A & R</span>
+        <span id="footerMonogram" class="font-display text-lg font-bold text-amber-400 tracking-wider">S & A</span>
       </div>
 
-      <h2 class="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">Shamika & Ananta</h2>
+      <h2 id="footerCoupleName" class="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">Shamika & Ananta</h2>
       <p class="font-serif italic text-amber-300/80 text-lg mt-1">Oasis Banquets • Pune, Maharashtra • December 2026</p>
 
       <!-- Wedding Hashtag Pill with Copy Functionality -->
@@ -963,11 +996,12 @@
         groomName: "Ananta Tamboli",
         brideShort: "Shamika",
         groomShort: "Ananta",
-        monogram: "A & R",
-        hashtag: "ShamikaFoundHerAnanta"
+        monogram: "S & A",
+        hashtag: "Shaan"
       },
-      weddingDateIso: "2026-12-13T18:46:00", // Year-Month-DayTHour:Minute:Second
+      weddingDateIso: "2026-12-13T18:46:00+05:30", // Year-Month-DayTHour:Minute:Second+IST Offset
       weddingDateFormatted: "Sunday, December 13, 2026",
+      rsvpDeadlineFormatted: "November 20, 2026",
       venueTagline: "Oasis Banquets, Chandani Chowk, Warje • Pune, Maharashtra",
       venueAddress: "Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058",
       googleMapsUrl: "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f",
@@ -979,7 +1013,7 @@
       galleryImages: [
         {
           src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
-          caption: "Golden Hour by Lake Pichola"
+          caption: "Golden Moments in Pune"
         },
         {
           src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
@@ -1079,9 +1113,8 @@
     setTheme(savedTheme);
 
     /* =========================================================================
-       4. AMBIENT BACKGROUND MUSIC CONTROLLER (with Web Audio Tanpura Fallback)
+       4. AMBIENT BACKGROUND MUSIC CONTROLLER (Web Audio Tanpura Synthesizer)
        ========================================================================= */
-    const audioEl = document.getElementById('weddingAudio');
     const musicBtn = document.getElementById('musicToggleBtn');
     const musicIcon = document.getElementById('musicIcon');
     const musicStatusText = document.getElementById('musicStatusText');
@@ -1089,9 +1122,14 @@
     let synthContext = null;
     let synthGain = null;
     let synthOscillators = [];
+    let stopTimeoutId = null;
 
     function startSynthTanpura() {
       try {
+        if (stopTimeoutId) {
+          clearTimeout(stopTimeoutId);
+          stopTimeoutId = null;
+        }
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         if (!AudioCtx) return;
         if (!synthContext) {
@@ -1100,12 +1138,19 @@
         if (synthContext.state === 'suspended') {
           synthContext.resume();
         }
+
+        // Clean up previous oscillators if active
+        synthOscillators.forEach(osc => {
+          try { osc.stop(); } catch(e) {}
+        });
+        synthOscillators = [];
+
         synthGain = synthContext.createGain();
-        synthGain.gain.setValueAtTime(0.01, synthContext.currentTime);
-        synthGain.gain.exponentialRampToValueAtTime(0.08, synthContext.currentTime + 1.5);
+        synthGain.gain.setValueAtTime(0.001, synthContext.currentTime);
+        synthGain.gain.exponentialRampToValueAtTime(0.07, synthContext.currentTime + 1.2);
         synthGain.connect(synthContext.destination);
 
-        // Indian classical Sa-Pa-Sa Tanpura harmonics (D3: 146.83Hz, A3: 220Hz, D4: 293.66Hz)
+        // Indian classical Sa-Pa-Sa Tanpura harmonics (D3: 146.83Hz, A3: 220Hz, D4: 293.66Hz, A4: 440Hz)
         const freqs = [146.83, 220.00, 293.66, 440.00];
         synthOscillators = freqs.map((f, i) => {
           const osc = synthContext.createOscillator();
@@ -1120,40 +1165,33 @@
           return osc;
         });
       } catch (err) {
-        console.warn("Web Audio ambient fallback error:", err);
+        console.warn("Web Audio ambient synthesizer:", err);
       }
     }
 
     function stopSynthTanpura() {
       if (synthGain && synthContext) {
-        synthGain.gain.exponentialRampToValueAtTime(0.001, synthContext.currentTime + 0.8);
-        setTimeout(() => {
+        try {
+          synthGain.gain.exponentialRampToValueAtTime(0.0001, synthContext.currentTime + 0.5);
+        } catch(e) {}
+        stopTimeoutId = setTimeout(() => {
           synthOscillators.forEach(osc => {
             try { osc.stop(); } catch(e) {}
           });
           synthOscillators = [];
-        }, 900);
+          stopTimeoutId = null;
+        }, 550);
       }
     }
 
     function toggleMusic() {
       if (!isPlaying) {
-        // Attempt external audio playback, with automatic graceful fallback to Indian Tanpura synth
-        audioEl.play().then(() => {
-          isPlaying = true;
-          musicIcon.textContent = "🔊";
-          musicStatusText.textContent = "Music: On";
-          musicBtn.classList.add('ring-2', 'ring-amber-400');
-        }).catch((err) => {
-          console.warn("External audio source failed or blocked, activating ambient tanpura synth:", err);
-          startSynthTanpura();
-          isPlaying = true;
-          musicIcon.textContent = "🔊";
-          musicStatusText.textContent = "Music: On";
-          musicBtn.classList.add('ring-2', 'ring-amber-400');
-        });
+        startSynthTanpura();
+        isPlaying = true;
+        musicIcon.textContent = "🔊";
+        musicStatusText.textContent = "Music: On";
+        musicBtn.classList.add('ring-2', 'ring-amber-400');
       } else {
-        audioEl.pause();
         stopSynthTanpura();
         isPlaying = false;
         musicIcon.textContent = "🎵";
@@ -1173,6 +1211,13 @@
       mobileMenu.classList.toggle('hidden');
     }
     mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // Auto-close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
 
     /* =========================================================================
        6. PHOTO GALLERY LIGHTBOX CONTROLLER
@@ -1230,14 +1275,34 @@
       }
     });
 
+    // Touch swipe support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightboxModal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          nextLightbox(); // swiped left
+        } else {
+          prevLightbox(); // swiped right
+        }
+      }
+    }, { passive: true });
+
     /* =========================================================================
        7. ADD TO GOOGLE CALENDAR HELPERS
        ========================================================================= */
     function addToGoogleCalendarMain() {
-      const title = encodeURIComponent("Wedding of Shamika & Ananta");
-      const details = encodeURIComponent("We joyfully invite you to celebrate our wedding at Oasis Banquets, Pune.");
-      const location = encodeURIComponent("Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058");
-      // Format: YYYYMMDDTHHMMSSZ (Dec 13, 2026 at 18:46 IST is 13:16 UTC)
+      const title = encodeURIComponent(`Wedding of ${WEDDING_CONFIG.couple.brideShort} & ${WEDDING_CONFIG.couple.groomShort}`);
+      const details = encodeURIComponent(`We joyfully invite you to celebrate our wedding at ${WEDDING_CONFIG.venueTagline}.`);
+      const location = encodeURIComponent(WEDDING_CONFIG.venueAddress);
+      // Dec 13, 2026 at 18:46 IST is 13:16 UTC
       const dates = "20261213T131600Z/20261213T190000Z";
       const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${dates}`;
       window.open(url, '_blank');
@@ -1245,20 +1310,22 @@
 
     function addToCalendar(eventKey) {
       let title = "";
-      const location = encodeURIComponent("Oasis Banquets, NDA Pashan Rd, Chandani Chowk, Warje, Pune, Maharashtra 411058");
+      const location = encodeURIComponent(WEDDING_CONFIG.venueAddress);
       let dates = "";
       let details = "";
+      const b = WEDDING_CONFIG.couple.brideShort;
+      const g = WEDDING_CONFIG.couple.groomShort;
 
       if (eventKey === 'haldi') {
-        title = encodeURIComponent("Haldi Ceremony - Shamika & Ananta");
+        title = encodeURIComponent(`Haldi Ceremony - ${b} & ${g}`);
         dates = "20261212T050000Z/20261212T090000Z";
         details = encodeURIComponent("Haldi & Phoolon Ki Holi at Oasis Banquets, Pune. Dress code: Yellow & Festive Florals.");
       } else if (eventKey === 'wedding') {
-        title = encodeURIComponent("Wedding Ceremony (Muhurtham) - Shamika & Ananta");
+        title = encodeURIComponent(`Wedding Ceremony (Muhurtham) - ${b} & ${g}`);
         dates = "20261213T110000Z/20261213T170000Z";
         details = encodeURIComponent("Sacred Pheras & Baraat at Oasis Banquets, Pune. Dress code: Royal Traditional Festive.");
       } else if (eventKey === 'reception') {
-        title = encodeURIComponent("Grand Reception - Shamika & Ananta");
+        title = encodeURIComponent(`Grand Reception - ${b} & ${g}`);
         dates = "20261213T140000Z/20261213T190000Z";
         details = encodeURIComponent("Celebration Dinner & Toast at Oasis Banquets, Pune. Dress code: Black Tie or Indo-Western Chic.");
       }
@@ -1268,57 +1335,113 @@
     }
 
     /* =========================================================================
-       8. RSVP FORM SUBMISSION & WHATSAPP INTEGRATION
+       8. RSVP FORM SUBMISSION & WHATSAPP ROUTING
        ========================================================================= */
     function getSelectedEvents() {
       const checkedBoxes = document.querySelectorAll('input[name="events"]:checked');
-      return Array.from(checkedBoxes).map(cb => cb.value).join(', ') || 'All Events';
+      return Array.from(checkedBoxes).map(cb => cb.value);
     }
 
-    function handleRsvpSubmit(e) {
-      e.preventDefault();
-      
-      const guestName = document.getElementById('guestName').value.trim();
-      const count = document.getElementById('attendeeCount').value;
-      const events = getSelectedEvents();
+    // Dismiss error alert when any checkbox is toggled
+    document.querySelectorAll('input[name="events"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const err = document.getElementById('eventErrorMsg');
+        if (err && getSelectedEvents().length > 0) {
+          err.classList.add('hidden');
+        }
+      });
+    });
 
-      // Trigger Confetti Celebration burst!
+    function buildAndSendRsvp(e) {
+      if (e) e.preventDefault();
+
+      const nameInput = document.getElementById('guestName');
+      const phoneInput = document.getElementById('guestPhone');
+      const emailInput = document.getElementById('guestEmail');
+      const countInput = document.getElementById('attendeeCount');
+      const wishesInput = document.getElementById('guestWishes');
+      const errorMsg = document.getElementById('eventErrorMsg');
+
+      const guestName = nameInput.value.trim();
+      const guestPhone = phoneInput.value.trim();
+      const guestEmail = emailInput ? emailInput.value.trim() : '';
+      const count = countInput.value;
+      const selectedEvents = getSelectedEvents();
+      const wishes = wishesInput ? wishesInput.value.trim() : '';
+
+      if (!guestName) {
+        nameInput.focus();
+        nameInput.classList.add('ring-2', 'ring-rose-500');
+        return;
+      }
+      nameInput.classList.remove('ring-2', 'ring-rose-500');
+
+      if (!guestPhone) {
+        phoneInput.focus();
+        phoneInput.classList.add('ring-2', 'ring-rose-500');
+        return;
+      }
+      phoneInput.classList.remove('ring-2', 'ring-rose-500');
+
+      if (selectedEvents.length === 0) {
+        if (errorMsg) errorMsg.classList.remove('hidden');
+        return;
+      }
+      if (errorMsg) errorMsg.classList.add('hidden');
+
+      const eventsText = selectedEvents.join(', ');
+
+      // Trigger Confetti Celebration burst
       if (typeof confetti === 'function') {
         confetti({
-          particleCount: 80,
-          spread: 70,
+          particleCount: 90,
+          spread: 75,
           origin: { y: 0.6 },
           colors: ['#c99834', '#083b2b', '#ffffff', '#e5bd68']
         });
       }
 
-      // Show Success State Card
+      // Show Success State Card on Page
       const successCard = document.getElementById('rsvpSuccessCard');
       const successMsg = document.getElementById('rsvpSuccessMsg');
-      successMsg.innerHTML = `Dearest <strong>${guestName}</strong>, thank you! We have noted your confirmation for <strong>${count} guest(s)</strong> attending <strong>${events}</strong>. We eagerly await your arrival at Oasis Banquets, Pune!`;
+      successMsg.innerHTML = `Dearest <strong>${guestName}</strong>, thank you! Your RSVP for <strong>${count} guest(s)</strong> attending <strong>${eventsText}</strong> has been confirmed and routed via WhatsApp. We eagerly await your arrival at Oasis Banquets, Pune!`;
       successCard.classList.remove('hidden');
-    }
 
-    function resetRsvpForm() {
-      document.getElementById('rsvpForm').reset();
-      document.getElementById('rsvpSuccessCard').classList.add('hidden');
-    }
-
-    function sendViaWhatsApp() {
-      const guestName = document.getElementById('guestName').value.trim() || 'A Wedding Guest';
-      const count = document.getElementById('attendeeCount').value;
-      const events = getSelectedEvents();
-      const wishes = document.getElementById('guestWishes').value.trim();
-
-      let message = `Namaste Shamika & Ananta! ✨\n\nI am delighted to RSVP for your wedding celebrations at Oasis Banquets, Pune!\n\n• Guest: ${guestName}\n• Attendees: ${count}\n• Events Attending: ${events}`;
+      // Formulate WhatsApp message with couple names and venue from config
+      const b = WEDDING_CONFIG.couple.brideShort;
+      const g = WEDDING_CONFIG.couple.groomShort;
+      let message = `Namaste ${b} & ${g}! ✨\n\nI am delighted to RSVP for your wedding celebrations at Oasis Banquets, Pune!\n\n• Guest: ${guestName}\n• Phone: ${guestPhone}\n• Attendees: ${count}\n• Events Attending: ${eventsText}`;
+      if (guestEmail) {
+        message += `\n• Email: ${guestEmail}`;
+      }
       if (wishes) {
         message += `\n• Note: ${wishes}`;
       }
       message += `\n\nLooking forward to celebrating with you! 🪔💍`;
 
+      const cleanPhone = WEDDING_CONFIG.rsvp.whatsappPhone.replace(/[^0-9]/g, '');
       const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/${WEDDING_CONFIG.rsvp.whatsappPhone}?text=${encodedMessage}`;
-      window.open(whatsappUrl, '_blank');
+      const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+
+      // Open WhatsApp in a new tab
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 350);
+    }
+
+    function handleRsvpSubmit(e) {
+      buildAndSendRsvp(e);
+    }
+
+    function sendViaWhatsApp() {
+      buildAndSendRsvp(null);
+    }
+
+    function resetRsvpForm() {
+      document.getElementById('rsvpForm').reset();
+      document.getElementById('rsvpSuccessCard').classList.add('hidden');
+      const err = document.getElementById('eventErrorMsg');
+      if (err) err.classList.add('hidden');
     }
 
     /* =========================================================================
@@ -1359,20 +1482,36 @@
         document.title = `${c.brideShort} & ${c.groomShort} — Wedding Celebration Invitation`;
         const bride = document.getElementById('brideHeroName');
         const groom = document.getElementById('groomHeroName');
-        const monogram = document.getElementById('navMonogram');
+        const navMonogram = document.getElementById('navMonogram');
+        const footerMonogram = document.getElementById('footerMonogram');
+        const navCoupleName = document.getElementById('navCoupleName');
+        const footerCoupleName = document.getElementById('footerCoupleName');
         const hashtag = document.getElementById('weddingHashtagText');
         const weddingDate = document.getElementById('heroWeddingDate');
         const location = document.getElementById('heroLocation');
         const blessing = document.getElementById('heroBlessing');
+        const deadline = document.getElementById('rsvpDeadlineText');
         
         if (bride) bride.textContent = c.brideShort;
         if (groom) groom.textContent = c.groomShort;
-        if (monogram) monogram.textContent = c.monogram;
+        if (navMonogram) navMonogram.textContent = c.monogram;
+        if (footerMonogram) footerMonogram.textContent = c.monogram;
+        if (navCoupleName) navCoupleName.textContent = `${c.brideShort} & ${c.groomShort}`;
+        if (footerCoupleName) footerCoupleName.textContent = `${c.brideShort} & ${c.groomShort}`;
         if (hashtag) hashtag.textContent = c.hashtag;
         if (weddingDate) weddingDate.textContent = WEDDING_CONFIG.weddingDateFormatted;
         if (location) location.textContent = WEDDING_CONFIG.venueTagline;
         if (blessing) blessing.textContent = WEDDING_CONFIG.invitationBlessing;
+        if (deadline && WEDDING_CONFIG.rsvpDeadlineFormatted) {
+          deadline.textContent = `Please kindly respond by ${WEDDING_CONFIG.rsvpDeadlineFormatted} to celebrate with us on ${WEDDING_CONFIG.weddingDateFormatted}.`;
+        }
       }
+    }
+    // Initialize immediately
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWeddingData);
+    } else {
+      initWeddingData();
     }
     // Initialize immediately
     if (document.readyState === 'loading') {
