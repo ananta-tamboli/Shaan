@@ -1,0 +1,82 @@
+# ==============================================================================
+# Private Wedding Invitation Website
+# Block Search Engines, Web Archivers, and AI Scrapers
+# Allow Social Media & Messaging Preview Bots (WhatsApp, Facebook, Twitter)
+# ==============================================================================
+
+# 1. Allow Messaging & Social Link Previews (So WhatsApp shows the wedding invitation card)
+User-agent: WhatsApp
+Allow: /
+
+User-agent: WhatsApp/2.0
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: facebookexternalhit/1.1
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# 2. Block Search Engine Crawlers & Indexers
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: Googlebot-Mobile
+Disallow: /
+
+User-agent: bingbot
+Disallow: /
+
+User-agent: MSNBot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# 3. Block Web Archivers (Wayback Machine, etc.)
+User-agent: ia_archiver
+Disallow: /
+
+# 4. Block AI Crawlers & Scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# 5. Default Fallback for all other search/indexing bots
+User-agent: *
+Disallow: /
