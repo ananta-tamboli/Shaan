@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Cinzel, Alex_Brush, Plus_Jakarta_Sans } from 'next/font/google'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { LanguageProvider } from '@/context/LanguageContext'
 import AudioElement from '@/components/ui/AudioElement'
 import './globals.css'
 
@@ -70,9 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="font-sans antialiased">
         <ThemeProvider>
-          <AudioElement>
-            {children}
-          </AudioElement>
+          <LanguageProvider>
+            <AudioElement>
+              {children}
+            </AudioElement>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

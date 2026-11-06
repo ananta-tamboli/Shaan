@@ -1,17 +1,27 @@
+'use client'
+
 import Image from 'next/image'
-import { couple, milestones } from '@/content/couple'
+import { couple } from '@/content/couple'
+import { useLang } from '@/context/LanguageContext'
 
 export default function Story() {
-  const { brideShort, groomShort, couplePhoto, couplePhotoAlt, coupleSince, storyQuote, storyParagraph1, storyParagraph2 } = couple
+  const { brideShort, groomShort, couplePhoto, couplePhotoAlt, coupleSince } = couple
+  const { t } = useLang()
+
+  const milestones = [
+    { date: t.milestone1Date, title: t.milestone1Title, description: t.milestone1Desc, isHighlight: false },
+    { date: t.milestone2Date, title: t.milestone2Title, description: t.milestone2Desc, isHighlight: false },
+    { date: t.milestone3Date, title: t.milestone3Title, description: t.milestone3Desc, isHighlight: true },
+  ]
 
   return (
     <section id="story" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative">
       <div className="text-center mb-16">
-        <span className="font-script text-3xl sm:text-4xl text-amber-600">The Journey of</span>
-        <h2 className="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Our Love Story</h2>
+        <span className="font-script text-3xl sm:text-4xl text-amber-600">{t.storyScriptHeading}</span>
+        <h2 className="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">{t.storyH2}</h2>
         <div className="w-16 h-0.5 bg-amber-500 mx-auto mt-3" />
         <p className="font-serif italic text-stone-600 text-lg mt-4 max-w-xl mx-auto">
-          {storyQuote}
+          {t.storyQuote}
         </p>
       </div>
 
@@ -39,10 +49,10 @@ export default function Story() {
         {/* Narrative */}
         <div className="space-y-6">
           <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-stone-800 leading-snug">
-            From College Corridors to Sacred Pheras
+            {t.storyH3}
           </h3>
-          <p className="text-stone-600 text-sm sm:text-base leading-relaxed">{storyParagraph1}</p>
-          <p className="text-stone-600 text-sm sm:text-base leading-relaxed">{storyParagraph2}</p>
+          <p className="text-stone-600 text-sm sm:text-base leading-relaxed">{t.storyP1}</p>
+          <p className="text-stone-600 text-sm sm:text-base leading-relaxed">{t.storyP2}</p>
 
           {/* Milestones timeline */}
           <div className="border-l-2 border-amber-300 pl-4 space-y-4 pt-2">

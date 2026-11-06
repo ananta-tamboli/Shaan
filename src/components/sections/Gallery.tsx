@@ -4,10 +4,12 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Lightbox from '@/components/ui/Lightbox'
 import { galleryItems } from '@/content/gallery'
+import { useLang } from '@/context/LanguageContext'
 
 export default function Gallery() {
   const [isOpen, setIsOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const { t } = useLang()
 
   function openLightbox(index: number) {
     setCurrentIndex(index)
@@ -29,11 +31,11 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       <div className="text-center mb-16">
-        <span className="font-script text-3xl sm:text-4xl text-amber-600">Cherished</span>
-        <h2 className="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">Moments of Love</h2>
+        <span className="font-script text-3xl sm:text-4xl text-amber-600">{t.galleryScript}</span>
+        <h2 className="font-display text-3xl sm:text-5xl font-bold text-stone-900 mt-1">{t.galleryH2}</h2>
         <div className="w-16 h-0.5 bg-amber-500 mx-auto mt-3" />
         <p className="font-serif italic text-stone-600 text-lg mt-3">
-          Capturing glances, laughter, and timeless celebrations
+          {t.gallerySubtitle}
         </p>
       </div>
 

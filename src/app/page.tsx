@@ -5,10 +5,12 @@ import Story from '@/components/sections/Story'
 import Itinerary from '@/components/sections/Itinerary'
 import Gallery from '@/components/sections/Gallery'
 import Rsvp from '@/components/sections/Rsvp'
+import EnvelopeIntro from '@/components/ui/EnvelopeIntro'
 
 export default function Home() {
   return (
     <>
+      <EnvelopeIntro />
       <Navbar />
       <main>
         <Hero />

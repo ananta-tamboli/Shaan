@@ -3,9 +3,11 @@
 import Countdown from '@/components/ui/Countdown'
 import { couple } from '@/content/couple'
 import { addToGoogleCalendarMain } from '@/lib/calendar'
+import { useLang } from '@/context/LanguageContext'
 
 export default function Hero() {
-  const { brideShort, groomShort, weddingDateIso, weddingDateFormatted, venueTagline, invitationBlessing } = couple
+  const { brideShort, groomShort, weddingDateIso, venueTagline } = couple
+  const { t } = useLang()
 
   return (
     <section
@@ -16,10 +18,7 @@ export default function Hero() {
       {/* Mandala watermark — top left */}
       <svg
         className="mandala-watermark -top-24 -left-24 w-96 h-96 animate-[spin_20s_linear_infinite]"
-        viewBox="0 0 200 200"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
+        viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
       >
         <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" />
         <circle cx="100" cy="100" r="70" stroke="currentColor" strokeWidth="0.8" />
@@ -33,10 +32,7 @@ export default function Hero() {
       {/* Mandala watermark — bottom right */}
       <svg
         className="mandala-watermark -bottom-24 -right-24 w-96 h-96 animate-[spin_20s_linear_infinite]"
-        viewBox="0 0 200 200"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
+        viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
       >
         <circle cx="100" cy="100" r="90" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" />
         <circle cx="100" cy="100" r="70" stroke="currentColor" strokeWidth="0.8" />
@@ -48,13 +44,13 @@ export default function Hero() {
         {/* Vedic blessing pill */}
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-amber-100/60 border border-amber-300/60 mb-6 shadow-sm">
           <span className="text-amber-600 text-xs" aria-hidden="true">🪔</span>
-          <span className="font-serif text-sm tracking-widest text-amber-900 font-semibold">{invitationBlessing}</span>
+          <span className="font-serif text-sm tracking-widest text-amber-900 font-semibold">{t.heroBlessingPill}</span>
           <span className="text-amber-600 text-xs" aria-hidden="true">🪔</span>
         </div>
 
         {/* Tagline */}
         <p className="font-serif italic text-lg sm:text-xl text-stone-600 max-w-lg mb-2">
-          Together with their families, invite you to celebrate their union
+          {t.heroTagline}
         </p>
 
         {/* Couple names */}
@@ -80,7 +76,7 @@ export default function Hero() {
         {/* Date & venue */}
         <div className="mb-8">
           <p className="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-stone-800">
-            {weddingDateFormatted}
+            {t.heroDate}
           </p>
           <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.25em] text-amber-800/80 mt-1">
             {venueTagline}
@@ -91,7 +87,7 @@ export default function Hero() {
         <div className="w-full max-w-2xl bg-white/70 backdrop-blur-md rounded-2xl p-6 sm:p-8 gold-box-shadow border border-amber-200/80 mb-10">
           <div className="text-center mb-4">
             <span className="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-              Counting down to forever
+              {t.heroCountingDown}
             </span>
           </div>
           <Countdown isoDate={weddingDateIso} />
@@ -103,13 +99,13 @@ export default function Hero() {
             href="#rsvp"
             className="w-full sm:w-auto px-8 py-3.5 rounded-full theme-btn-primary font-medium text-sm tracking-wider uppercase shadow-lg hover:shadow-xl transition-all duration-300 text-center"
           >
-            RSVP With Us
+            {t.heroCta}
           </a>
           <a
             href="#itinerary"
             className="w-full sm:w-auto px-8 py-3.5 rounded-full theme-btn-secondary border font-medium text-sm tracking-wider uppercase shadow-sm transition-all text-center"
           >
-            Explore Itinerary
+            {t.heroExplore}
           </a>
         </div>
 
@@ -122,7 +118,7 @@ export default function Hero() {
             <svg className="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Add to Google Calendar
+            {t.heroCalendar}
           </button>
         </div>
       </div>
@@ -133,7 +129,7 @@ export default function Hero() {
         className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center text-stone-400 hover:text-amber-600 transition-colors animate-bounce"
         aria-label="Scroll down"
       >
-        <span className="text-[10px] tracking-widest uppercase mb-1 font-semibold">Scroll</span>
+        <span className="text-[10px] tracking-widest uppercase mb-1 font-semibold">{t.heroScroll}</span>
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
