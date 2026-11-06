@@ -36,8 +36,8 @@ export interface Milestone {
 }
 
 export interface WeddingEvent {
-  key: 'haldi' | 'wedding' | 'reception'
-  calendarKey: 'haldi' | 'wedding' | 'reception'
+  key: 'seemant' | 'haldi' | 'wedding' | 'reception'
+  calendarKey: 'seemant' | 'haldi' | 'wedding' | 'reception'
   name: string
   tagline: string
   badge: string
