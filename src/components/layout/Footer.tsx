@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import { couple } from '@/content/couple'
+import { useLang } from '@/context/LanguageContext'
 
 export default function Footer() {
   const [copied, setCopied] = useState(false)
+  const { t } = useLang()
 
   async function copyHashtag() {
     try {
@@ -34,7 +36,7 @@ export default function Footer() {
           {couple.brideShort} &amp; {couple.groomShort}
         </h2>
         <p className="font-serif italic text-amber-300/80 text-lg mt-1">
-          Oasis Banquets • Pune, Maharashtra • December 2026
+          {t.footerVenue}
         </p>
 
         {/* Hashtag copy */}
@@ -61,7 +63,7 @@ export default function Footer() {
         {/* Family blessing */}
         <div className="border-t border-stone-800 pt-8 max-w-xl mx-auto space-y-2">
           <p className="font-serif italic text-sm text-stone-400">
-            &ldquo;With the affectionate blessings of our beloved parents and elders&rdquo;
+            &ldquo;{t.footerBlessing}&rdquo;
           </p>
           <p className="text-xs font-semibold tracking-widest uppercase text-amber-200/90">
             {couple.familyNames}
@@ -70,12 +72,12 @@ export default function Footer() {
 
         {/* Copyright + back to top */}
         <div className="mt-12 pt-6 border-t border-stone-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500">
-          <p>&copy; 2026 {couple.brideShort} &amp; {couple.groomShort} Wedding. Built with love.</p>
+          <p>&copy; 2026 {couple.brideShort} &amp; {couple.groomShort} {t.footerBuilt}</p>
           <a
             href="#hero"
             className="mt-4 sm:mt-0 hover:text-amber-400 flex items-center gap-1 transition-colors"
           >
-            <span>Back to Top</span>
+            <span>{t.footerBack}</span>
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>

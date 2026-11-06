@@ -3,6 +3,7 @@
 // ============================================================
 
 export type ThemeKey = 'emerald' | 'burgundy' | 'terracotta'
+export type LangKey = 'en' | 'hi' | 'mr'
 
 export interface CoupleInfo {
   brideName: string

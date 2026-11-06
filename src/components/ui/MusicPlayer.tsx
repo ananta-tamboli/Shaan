@@ -1,9 +1,11 @@
 'use client'
 
 import { useAudio } from '@/context/AudioContext'
+import { useLang } from '@/context/LanguageContext'
 
 export default function MusicPlayer() {
   const { isPlaying, togglePlay } = useAudio()
+  const { t } = useLang()
 
   return (
     <button
@@ -14,11 +16,11 @@ export default function MusicPlayer() {
         isPlaying ? 'ring-2 ring-offset-1' : ''
       }`}
       style={isPlaying ? { '--tw-ring-color': 'var(--color-accent)' } as React.CSSProperties : undefined}
-      aria-label={isPlaying ? 'Pause music' : 'Play music'}
+      aria-label={isPlaying ? t.musicPause : t.musicPlay}
     >
       <span className="text-xs" aria-hidden="true">{isPlaying ? '⏸' : '▶'}</span>
       <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold">
-        {isPlaying ? 'Pause' : 'Play'}
+        {isPlaying ? t.musicPause : t.musicPlay}
       </span>
     </button>
   )

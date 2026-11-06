@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react'
 import MusicPlayer from '@/components/ui/MusicPlayer'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 import { couple } from '@/content/couple'
 import { useAudio } from '@/context/AudioContext'
+import { useLang } from '@/context/LanguageContext'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -11,6 +13,7 @@ export default function Navbar() {
   const drawerRef = useRef<HTMLDivElement>(null)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
   const { isPlaying, togglePlay } = useAudio()
+  const { t } = useLang()
 
   // Scroll listener
   useEffect(() => {
@@ -35,11 +38,11 @@ export default function Navbar() {
   }, [drawerOpen])
 
   const navLinks = [
-    { href: '#story', label: 'Our Story' },
-    { href: '#itinerary', label: 'Itinerary' },
-    { href: '#gallery', label: 'Moments' },
-    { href: '#rsvp', label: 'RSVP' },
-    { href: '#details', label: 'Details' },
+    { href: '#story',     label: t.navStory },
+    { href: '#itinerary', label: t.navItinerary },
+    { href: '#gallery',   label: t.navMoments },
+    { href: '#rsvp',      label: t.navRsvp },
+    { href: '#details',   label: t.navDetails },
   ]
 
   return (
@@ -72,6 +75,7 @@ export default function Navbar() {
 
         {/* Right controls */}
         <div className="flex items-center gap-2.5 sm:gap-3">
+          <LanguageSwitcher />
           <MusicPlayer />
 
           {/* Hamburger */}
@@ -104,7 +108,7 @@ export default function Navbar() {
               className="py-2 hover:bg-amber-50 rounded-lg"
               onClick={() => setDrawerOpen(false)}
             >
-              {link.label.replace('Details', 'Venue & Details')}
+              {link.label}
             </a>
           ))}
 
@@ -116,7 +120,7 @@ export default function Navbar() {
               className="w-full flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-semibold theme-btn-primary"
             >
               <span>{isPlaying ? '⏸' : '▶'}</span>
-              <span>{isPlaying ? 'Pause Music' : 'Play Music'}</span>
+              <span>{isPlaying ? t.musicPause : t.musicPlay} Music</span>
             </button>
           </div>
         </div>
