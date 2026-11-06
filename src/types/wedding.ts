@@ -35,6 +35,12 @@ export interface Milestone {
   isHighlight?: boolean
 }
 
+export interface DressCodeSwatch {
+  hex: string
+  label: string
+  avoid?: boolean   // true = "please avoid this colour"
+}
+
 export interface WeddingEvent {
   key: 'seemant' | 'haldi' | 'wedding' | 'reception'
   calendarKey: 'seemant' | 'haldi' | 'wedding' | 'reception'
@@ -49,11 +55,13 @@ export interface WeddingEvent {
   dressCodeDetail: string
   dressCodeNote: string
   dressCodeEmoji: string
+  dressCodeSwatches: DressCodeSwatch[]
   mapsUrl: string
   /** UTC times for Google Calendar: "YYYYMMDDTHHMMSSz/YYYYMMDDTHHMMSSz" */
   calendarDates: string
   colorKey: 'yellow' | 'rose' | 'emerald'
   isHighlighted?: boolean
+  hidden?: boolean
 }
 
 export interface GalleryItem {

@@ -8,16 +8,14 @@ const SEEN_KEY = 'wedding_envelope_seen'
 
 export default function EnvelopeIntro() {
   const { t } = useLang()
-  // States: 'idle' | 'opening' | 'open' | 'done'
-  const [phase, setPhase] = useState<'idle' | 'opening' | 'open' | 'done'>('idle')
+  // null = not yet hydrated (render nothing to avoid SSR mismatch)
+  // 'idle' | 'opening' | 'open' | 'done' = client phases
+  const [phase, setPhase] = useState<null | 'idle' | 'opening' | 'open' | 'done'>(null)
 
   useEffect(() => {
     // Only show once per browser session (not once ever — guests may revisit)
     const seen = sessionStorage.getItem(SEEN_KEY)
-    if (seen) {
-      setPhase('done')
-    }
-    // else stay 'idle' → visible
+    setPhase(seen ? 'done' : 'idle')
   }, [])
 
   function handleOpen() {
@@ -32,7 +30,7 @@ export default function EnvelopeIntro() {
     }, 2400)
   }
 
-  if (phase === 'done') return null
+  if (phase === null || phase === 'done') return null
 
   return (
     <div
