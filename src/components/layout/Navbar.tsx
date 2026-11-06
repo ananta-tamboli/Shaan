@@ -1,10 +1,8 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import ThemeSwitcher from '@/components/ui/ThemeSwitcher'
 import MusicPlayer from '@/components/ui/MusicPlayer'
 import { couple } from '@/content/couple'
-import { musicTracks } from '@/content/music'
 import { useAudio } from '@/context/AudioContext'
 
 export default function Navbar() {
@@ -12,7 +10,7 @@ export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const drawerRef = useRef<HTMLDivElement>(null)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
-  const { currentTrack, selectTrack, isPlaying, togglePlay } = useAudio()
+  const { isPlaying, togglePlay } = useAudio()
 
   // Scroll listener
   useEffect(() => {
@@ -74,7 +72,6 @@ export default function Navbar() {
 
         {/* Right controls */}
         <div className="flex items-center gap-2.5 sm:gap-3">
-          <ThemeSwitcher />
           <MusicPlayer />
 
           {/* Hamburger */}
@@ -111,30 +108,16 @@ export default function Navbar() {
             </a>
           ))}
 
-          {/* Mobile soundtrack selector */}
-          <div className="pt-2 border-t border-stone-200 text-left normal-case">
-            <label className="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">
-              Wedding Soundtrack
-            </label>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={togglePlay}
-                className={`flex-shrink-0 px-3 py-2 rounded-lg text-xs font-semibold text-white ${isPlaying ? 'bg-amber-800' : 'bg-amber-700'}`}
-              >
-                {isPlaying ? '⏸' : '▶'}
-              </button>
-              <select
-                value={currentTrack}
-                onChange={(e) => selectTrack(e.target.value)}
-                aria-label="Mobile soundtrack selector"
-                className="flex-1 text-xs p-2 rounded-lg border border-amber-300 bg-amber-50/70 text-amber-950 focus:ring-1 focus:ring-amber-500"
-              >
-                {musicTracks.map((t) => (
-                  <option key={t.value} value={t.value}>{t.label}</option>
-                ))}
-              </select>
-            </div>
+          {/* Mobile play/pause */}
+          <div className="pt-2 border-t border-stone-200">
+            <button
+              type="button"
+              onClick={togglePlay}
+              className="w-full flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-semibold theme-btn-primary"
+            >
+              <span>{isPlaying ? '⏸' : '▶'}</span>
+              <span>{isPlaying ? 'Pause Music' : 'Play Music'}</span>
+            </button>
           </div>
         </div>
       )}
