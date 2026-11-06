@@ -35,12 +35,6 @@ const dressTitleClasses: Record<WeddingEvent['colorKey'], string> = {
   rose: 'text-rose-800',
   emerald: 'text-emerald-800',
 }
-const mapsButtonClasses: Record<WeddingEvent['colorKey'], string> = {
-  yellow: 'bg-amber-600 hover:bg-amber-700',
-  rose: 'bg-amber-700 hover:bg-amber-800',
-  emerald: 'bg-amber-600 hover:bg-amber-700',
-}
-
 export default function Itinerary() {
   return (
     <section
@@ -113,7 +107,7 @@ export default function Itinerary() {
                   href={event.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-2.5 px-4 rounded-xl text-white font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-sm ${mapsButtonClasses[event.colorKey]}`}
+                  className="w-full py-2.5 px-4 rounded-xl font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-colors shadow-sm theme-btn-primary"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

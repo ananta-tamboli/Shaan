@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useEffect } from 'react'
 
 interface TanpuraSynth {
   start: () => void
@@ -15,6 +15,16 @@ export function useTanpuraSynth(): TanpuraSynth {
   const gainRef = useRef<GainNode | null>(null)
   const oscsRef = useRef<OscillatorNode[]>([])
   const stopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Clean up on unmount
+  useEffect(() => {
+    return () => {
+      if (stopTimerRef.current) clearTimeout(stopTimerRef.current)
+      oscsRef.current.forEach((o) => { try { o.stop() } catch { /* already stopped */ } })
+      oscsRef.current = []
+      ctxRef.current?.close().catch(() => {})
+    }
+  }, [])
 
   const start = useCallback(() => {
     try {
