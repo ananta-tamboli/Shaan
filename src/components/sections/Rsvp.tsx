@@ -32,7 +32,7 @@ function composeMessage(form: FormState, brideShort: string, groomShort: string)
 export default function Rsvp() {
   const { t } = useLang()
 
-  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3]
+  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3, t.rsvpEvent4]
 
   const INITIAL_STATE: FormState = {
     name: '',
@@ -187,7 +187,7 @@ export default function Rsvp() {
               <p className={labelClass}>
                 {t.rsvpEvents} <span className="text-rose-500">*</span>
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {ALL_EVENTS.map((eventName) => (
                   <label
                     key={eventName}

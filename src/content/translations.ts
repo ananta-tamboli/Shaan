@@ -71,6 +71,7 @@ export interface Translations {
   rsvpEvent1: string
   rsvpEvent2: string
   rsvpEvent3: string
+  rsvpEvent4: string
   rsvpWishes: string
   rsvpWishesPlaceholder: string
   rsvpSubmit: string
@@ -156,9 +157,10 @@ const en: Translations = {
   rsvpAttendee4: '4 Persons (Family)',
   rsvpAttendee5: '5+ Persons (Family Group)',
   rsvpEvents: 'Events You Will Grace',
-  rsvpEvent1: 'Haldi Ceremony',
-  rsvpEvent2: 'Wedding (Muhurtham)',
-  rsvpEvent3: 'Grand Reception',
+  rsvpEvent1: 'Seemant Pujan',
+  rsvpEvent2: 'Haldi Ceremony',
+  rsvpEvent3: 'Wedding (Muhurtham)',
+  rsvpEvent4: 'Grand Reception',
   rsvpWishes: 'Dietary Preferences or Warm Wishes',
   rsvpWishesPlaceholder: 'e.g. Pure Vegetarian / Jain food preferred. Can\'t wait to celebrate with you both!',
   rsvpSubmit: 'Send RSVP Confirmation',
@@ -241,9 +243,10 @@ const hi: Translations = {
   rsvpAttendee4: '४ व्यक्ति (परिवार)',
   rsvpAttendee5: '५+ व्यक्ति (पारिवारिक समूह)',
   rsvpEvents: 'आप किन समारोहों में शामिल होंगे',
-  rsvpEvent1: 'हल्दी समारोह',
-  rsvpEvent2: 'विवाह (मुहूर्त)',
-  rsvpEvent3: 'भव्य स्वागत समारोह',
+  rsvpEvent1: 'सीमांत पूजन',
+  rsvpEvent2: 'हल्दी समारोह',
+  rsvpEvent3: 'विवाह (मुहूर्त)',
+  rsvpEvent4: 'भव्य स्वागत समारोह',
   rsvpWishes: 'आहार प्राथमिकता या शुभकामनाएं',
   rsvpWishesPlaceholder: 'जैसे: शुद्ध शाकाहारी / जैन भोजन पसंद। आप दोनों के साथ उत्सव मनाने का इंतजार नहीं हो रहा!',
   rsvpSubmit: 'आरएसवीपी भेजें',
@@ -326,9 +329,10 @@ const mr: Translations = {
   rsvpAttendee4: '४ व्यक्ती (कुटुंब)',
   rsvpAttendee5: '५+ व्यक्ती (कुटुंब गट)',
   rsvpEvents: 'आपण कोणत्या समारंभांना उपस्थित राहाल',
-  rsvpEvent1: 'हळद समारंभ',
-  rsvpEvent2: 'विवाह (मुहूर्त)',
-  rsvpEvent3: 'भव्य स्वागत समारंभ',
+  rsvpEvent1: 'सीमांत पूजन',
+  rsvpEvent2: 'हळद समारंभ',
+  rsvpEvent3: 'विवाह (मुहूर्त)',
+  rsvpEvent4: 'भव्य स्वागत समारंभ',
   rsvpWishes: 'आहार प्राधान्य किंवा शुभेच्छा',
   rsvpWishesPlaceholder: 'उदा. शुद्ध शाकाहारी / जैन जेवण पसंत. आपणा दोघांसमवेत उत्सव साजरा करण्याची आतुरता आहे!',
   rsvpSubmit: 'आरएसव्हीपी पाठवा',

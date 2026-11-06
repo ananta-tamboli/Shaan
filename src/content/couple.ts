@@ -7,7 +7,7 @@ export const couple: CoupleInfo = {
   groomShort: 'Ananta',
   monogram: 'S & A',
   hashtag: 'Shaan',
-  weddingDateIso: '2026-12-13T18:46:00+05:30',
+  weddingDateIso: '2026-12-13T17:46:00+05:30',
   weddingDateFormatted: 'Sunday, December 13, 2026',
   rsvpDeadlineFormatted: 'November 20, 2026',
   venueTagline: 'Oasis Banquets, Chandani Chowk, Warje • Pune, Maharashtra',

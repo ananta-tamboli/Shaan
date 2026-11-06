@@ -40,8 +40,9 @@ const dressTitleClasses: Record<WeddingEvent['colorKey'], string> = {
 
 // ISO start times for each event (used for countdowns)
 const eventIso: Record<WeddingEvent['key'], string> = {
-  haldi:     '2026-12-12T10:30:00+05:30',
-  wedding:   '2026-12-13T16:30:00+05:30',
+  seemant:   '2026-12-13T07:30:00+05:30',
+  haldi:     '2026-12-13T08:00:00+05:30',
+  wedding:   '2026-12-13T17:46:00+05:30',
   reception: '2026-12-13T19:30:00+05:30',
 }
 
@@ -64,7 +65,7 @@ export default function Itinerary() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
           {events.map((event) => (
             <div
               key={event.key}
