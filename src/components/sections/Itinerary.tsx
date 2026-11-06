@@ -4,6 +4,7 @@ import { events } from '@/content/events'
 import { addToCalendar } from '@/lib/calendar'
 import { useLang } from '@/context/LanguageContext'
 import EventCountdown from '@/components/ui/EventCountdown'
+import DressCodePalette from '@/components/ui/DressCodePalette'
 import type { WeddingEvent } from '@/types/wedding'
 
 // Color key → Tailwind class maps (event-specific colors, not theme colors)
@@ -65,8 +66,8 @@ export default function Itinerary() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
-          {events.map((event) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+          {events.filter((e) => !e.hidden).map((event) => (
             <div
               key={event.key}
               className={`bg-white rounded-3xl p-6 sm:p-7 shadow-md gold-box-shadow-hover flex flex-col justify-between relative overflow-hidden ${
@@ -114,6 +115,7 @@ export default function Itinerary() {
                   </div>
                   <p className="text-xs font-semibold text-stone-800 mt-0.5">{event.dressCodeTitle}</p>
                   <p className="text-[11px] text-stone-500 mt-0.5">{event.dressCodeDetail}</p>
+                  <DressCodePalette swatches={event.dressCodeSwatches} />
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import Countdown from '@/components/ui/Countdown'
+import DownloadInvite from '@/components/ui/DownloadInvite'
 import { couple } from '@/content/couple'
 import { addToGoogleCalendarMain } from '@/lib/calendar'
 import { useLang } from '@/context/LanguageContext'
@@ -109,8 +110,8 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Add to calendar */}
-        <div className="mt-4">
+        {/* Add to calendar + download invite */}
+        <div className="mt-4 flex flex-col sm:flex-row items-center gap-2">
           <button
             onClick={addToGoogleCalendarMain}
             className="inline-flex items-center gap-2 text-xs font-semibold text-amber-800 hover:text-amber-950 transition-colors py-1.5 px-3 rounded-lg hover:bg-amber-100/50"
@@ -120,6 +121,8 @@ export default function Hero() {
             </svg>
             {t.heroCalendar}
           </button>
+          <span className="hidden sm:inline text-stone-300 text-xs">·</span>
+          <DownloadInvite />
         </div>
       </div>
 
