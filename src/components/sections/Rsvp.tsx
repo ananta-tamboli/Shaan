@@ -22,7 +22,7 @@ function composeMessage(form: FormState, brideShort: string, groomShort: string)
     form.email ? `📧 Email: ${form.email}` : null,
     `👥 Attending: ${form.attendeeCount} person(s)`,
     `🎉 Events: ${form.selectedEvents.join(', ')}`,
-    form.wishes ? `🌿 Dietary / Wishes: ${form.wishes}` : null,
+    form.wishes ? `💌 Warm Wishes: ${form.wishes}` : null,
     ``,
     `With love & joy! 💍`,
   ]
@@ -32,7 +32,7 @@ function composeMessage(form: FormState, brideShort: string, groomShort: string)
 export default function Rsvp() {
   const { t } = useLang()
 
-  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3, t.rsvpEvent4]
+  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3]
 
   const INITIAL_STATE: FormState = {
     name: '',
@@ -208,7 +208,7 @@ export default function Rsvp() {
               )}
             </div>
 
-            {/* Dietary / Wishes */}
+            {/* Warm Wishes */}
             <div>
               <label htmlFor="guestWishes" className={labelClass}>{t.rsvpWishes}</label>
               <textarea
