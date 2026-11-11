@@ -6,6 +6,7 @@ export const couple: CoupleInfo = {
   brideShort: 'Shamika',
   groomShort: 'Ananta',
   monogram: 'S & A',
+  logoUrl: '/images/logo.png',
   hashtag: 'Shaan',
   weddingDateIso: '2026-12-13T17:46:00+05:30',
   weddingDateFormatted: 'Sunday, December 13, 2026',
@@ -21,8 +22,7 @@ export const couple: CoupleInfo = {
     'What began on October 10, 2015, between bustling college lecture halls, shared notes, and canteen chai, quickly blossomed into a bond that only grew deeper with time. Through exams, graduation, career beginnings, and eleven unforgettable years of companionship, we grew up together—becoming each other\'s best friend, confidant, and greatest cheerleader.',
   storyParagraph2:
     'Now, after more than a decade of shared laughter, enduring friendship, and quiet understanding, we are ready to take the sacred seven steps and begin our forever. Our celebration would be incomplete without the presence, warmth, and blessings of the loved ones who have witnessed our journey from the very beginning.',
-  couplePhoto:
-    'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=80',
+  couplePhoto: '/images/couple-portrait.jpg',
   couplePhotoAlt: 'Shamika and Ananta',
   coupleSince: 'College Sweethearts • Since October 10, 2015',
   whatsappPhone: '919850530250',

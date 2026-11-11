@@ -110,7 +110,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Add to calendar + download invite */}
+        {/* Add to calendar (DownloadInvite hidden for now) */}
         <div className="mt-4 flex flex-col sm:flex-row items-center gap-2">
           <button
             onClick={addToGoogleCalendarMain}
@@ -121,8 +121,8 @@ export default function Hero() {
             </svg>
             {t.heroCalendar}
           </button>
-          <span className="hidden sm:inline text-stone-300 text-xs">·</span>
-          <DownloadInvite />
+          {/* <span className="hidden sm:inline text-stone-300 text-xs">·</span> */}
+          {/* <DownloadInvite /> */}
         </div>
       </div>
 

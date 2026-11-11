@@ -11,6 +11,7 @@ export interface CoupleInfo {
   brideShort: string
   groomShort: string
   monogram: string
+  logoUrl: string
   hashtag: string
   weddingDateIso: string
   weddingDateFormatted: string

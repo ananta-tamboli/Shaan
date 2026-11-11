@@ -32,8 +32,8 @@ export default function DressCodePalette({ swatches }: DressCodePaletteProps) {
         </div>
       </div>
 
-      {/* Avoid colours */}
-      {avoided.length > 0 && (
+      {/* Avoid colours (hidden for now) */}
+      {/* {avoided.length > 0 && (
         <div>
           <p className="text-[10px] font-bold uppercase tracking-wider text-rose-400 mb-1.5">Avoid</p>
           <div className="flex flex-wrap gap-2">
@@ -46,7 +46,6 @@ export default function DressCodePalette({ swatches }: DressCodePaletteProps) {
                     title={`Avoid: ${swatch.label}`}
                     aria-label={`Avoid ${swatch.label}`}
                   />
-                  {/* X overlay */}
                   <svg
                     className="absolute inset-0 w-full h-full pointer-events-none"
                     viewBox="0 0 28 28"
@@ -60,7 +59,7 @@ export default function DressCodePalette({ swatches }: DressCodePaletteProps) {
             ))}
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Tooltip hint */}
       <p className="text-[9px] text-stone-400 italic">Hover swatches to see colour names</p>

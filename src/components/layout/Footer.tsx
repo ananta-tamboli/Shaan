@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { couple } from '@/content/couple'
 import { useLang } from '@/context/LanguageContext'
 
@@ -25,11 +26,15 @@ export default function Footer() {
     >
       <div className="max-w-4xl mx-auto text-center relative z-10">
 
-        {/* Monogram circle */}
-        <div className="w-16 h-16 rounded-full border border-amber-500/60 mx-auto flex items-center justify-center bg-stone-800/80 mb-6 shadow-lg shadow-amber-900/20">
-          <span className="font-display text-lg font-bold text-amber-400 tracking-wider">
-            {couple.monogram}
-          </span>
+        {/* Logo circle */}
+        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-amber-500/60 mx-auto mb-6 shadow-xl shadow-amber-950/50 bg-stone-800">
+          <Image
+            src={couple.logoUrl}
+            alt={`${couple.brideShort} & ${couple.groomShort} Logo`}
+            fill
+            className="object-cover"
+            sizes="80px"
+          />
         </div>
 
         <h2 className="font-display text-3xl sm:text-4xl text-white font-bold tracking-tight">
