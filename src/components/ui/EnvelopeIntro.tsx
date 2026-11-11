@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { couple } from '@/content/couple'
 import { useLang } from '@/context/LanguageContext'
 
@@ -70,15 +71,20 @@ export default function EnvelopeIntro() {
               </svg>
             </div>
 
-            {/* Envelope body content — monogram seal */}
+            {/* Envelope body content — logo seal */}
             <div className="absolute inset-0 flex flex-col items-center justify-center pb-8 gap-2">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-2"
-                style={{ background: 'var(--theme-gradient)', borderColor: 'var(--color-accent)' }}
+                className="relative w-20 h-20 rounded-full overflow-hidden shadow-2xl border-2"
+                style={{ borderColor: 'var(--color-accent)' }}
               >
-                <span className="font-display text-xl font-bold text-white tracking-widest">
-                  {couple.monogram}
-                </span>
+                <Image
+                  src={couple.logoUrl}
+                  alt={`${couple.brideShort} & ${couple.groomShort} Seal`}
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                  priority
+                />
               </div>
               <p className="font-script text-2xl sm:text-3xl mt-1" style={{ color: 'var(--color-primary)' }}>
                 {couple.brideShort} &amp; {couple.groomShort}

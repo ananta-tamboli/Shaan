@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import MusicPlayer from '@/components/ui/MusicPlayer'
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 import { couple } from '@/content/couple'
@@ -53,11 +54,16 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Logo / Monogram */}
-        <a href="#hero" className="group flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-50/50 group-hover:scale-105 transition-transform">
-            <span className="font-display text-sm font-bold text-amber-700 tracking-wider">
-              {couple.monogram}
-            </span>
+        <a href="#hero" className="group flex items-center gap-2.5">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border border-amber-500/50 shadow-sm group-hover:scale-105 transition-transform bg-amber-950/10">
+            <Image
+              src={couple.logoUrl}
+              alt={`${couple.brideShort} & ${couple.groomShort} Logo`}
+              fill
+              className="object-cover"
+              sizes="40px"
+              priority
+            />
           </div>
           <span className="font-script text-2xl text-amber-900 hidden sm:inline">
             {couple.brideShort} &amp; {couple.groomShort}
