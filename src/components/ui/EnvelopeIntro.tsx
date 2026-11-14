@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { couple } from '@/content/couple'
 import { useLang } from '@/context/LanguageContext'
+import { useAudio } from '@/context/AudioContext'
 
 const SEEN_KEY = 'wedding_envelope_seen'
 
 export default function EnvelopeIntro() {
   const { t } = useLang()
+  const { isPlaying, togglePlay } = useAudio()
   // null = not yet hydrated (render nothing to avoid SSR mismatch)
   // 'idle' | 'opening' | 'open' | 'done' = client phases
   const [phase, setPhase] = useState<null | 'idle' | 'opening' | 'open' | 'done'>(null)
@@ -21,6 +23,9 @@ export default function EnvelopeIntro() {
 
   function handleOpen() {
     if (phase !== 'idle') return
+    if (!isPlaying) {
+      togglePlay()
+    }
     setPhase('opening')
     // After flap animation, show the card inside
     setTimeout(() => setPhase('open'), 700)
