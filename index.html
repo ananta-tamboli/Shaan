@@ -259,7 +259,7 @@
        AUDIO ELEMENT FOR AMBIENT BACKGROUND MUSIC
        ========================================================================= -->
   <audio id="weddingAudio" loop preload="metadata">
-    <source id="audioSource" src="audio/jashn-e-bahara.mp3" type="audio/mp3">
+    <source id="audioSource" src="audio/mohabbatein-love-theme.mp3" type="audio/mp3">
     <!-- Web Audio Tanpura Synth acts as dynamic zero-network offline fallback -->
   </audio>
 
@@ -331,7 +331,8 @@
           
           <div class="relative flex items-center pr-1 pl-1">
             <select id="songSelect" aria-label="Select Wedding Soundtrack" class="bg-transparent text-amber-950 text-[11px] sm:text-xs font-medium pl-1 pr-4 py-0.5 rounded cursor-pointer focus:outline-none max-w-[105px] xs:max-w-[140px] sm:max-w-[190px] md:max-w-[220px] truncate appearance-none font-sans">
-              <option value="audio/jashn-e-bahara.mp3" selected>🎵 Jashn-e-Baharaa (Flute) [Default]</option>
+              <option value="audio/mohabbatein-love-theme.mp3" selected>🎻 Mohabbatein Love Theme (Instrumental) [Default]</option>
+              <option value="audio/jashn-e-bahara.mp3">🎵 Jashn-e-Baharaa (Flute)</option>
               <option value="audio/royal-strings.mp3">🎻 Royal Strings & Oboe (A.R. Rahman)</option>
               <option value="audio/in-lamhon-ke-daaman-mein.mp3">💫 In Lamhon Ke Daaman Mein (Romantic)</option>
               <option value="synth:tanpura">🪔 Sacred Tanpura Drone (Synth)</option>
@@ -360,7 +361,8 @@
       <div class="pt-2 border-t border-stone-200 text-left normal-case">
         <label for="mobileSongSelect" class="block text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">Wedding Soundtrack</label>
         <select id="mobileSongSelect" class="w-full text-xs font-sans p-2 rounded-lg border border-amber-300 bg-amber-50/70 text-amber-950 focus:ring-1 focus:ring-amber-500">
-          <option value="audio/jashn-e-bahara.mp3" selected>🎵 Jashn-e-Baharaa (Flute) [Default]</option>
+          <option value="audio/mohabbatein-love-theme.mp3" selected>🎻 Mohabbatein Love Theme (Instrumental) [Default]</option>
+          <option value="audio/jashn-e-bahara.mp3">🎵 Jashn-e-Baharaa (Flute)</option>
           <option value="audio/royal-strings.mp3">🎻 Royal Strings & Oboe (A.R. Rahman)</option>
           <option value="audio/in-lamhon-ke-daaman-mein.mp3">💫 In Lamhon Ke Daaman Mein (Romantic)</option>
           <option value="synth:tanpura">🪔 Sacred Tanpura Drone (Synth)</option>
@@ -1031,9 +1033,10 @@
       googleMapsUrl: "https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiAkOHw0t-XAxUAAAAAHQAAAAAQBg..i&client=safari&udm&fvr=1&pvq=CgsvZy8xdGQ3OWx3cCIRCgtvYXNpcyBob3RlbBACGAM&lqi=ChBvYXNpcyBob3RlbCBwdW5lSPWW08PlgICACFoaEAAQARgAGAIiEG9hc2lzIGhvdGVsIHB1bmWSARdub3J0aF9pbmRpYW5fcmVzdGF1cmFudA&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc2be36604ced09:0x7db8dc0be2fd944f",
       invitationBlessing: "॥ श्री गणेशाय नमः ॥",
       soundtrack: {
-        defaultTrack: "audio/jashn-e-bahara.mp3",
+        defaultTrack: "audio/mohabbatein-love-theme.mp3",
         tracks: [
-          { value: "audio/jashn-e-bahara.mp3", label: "🎵 Jashn-e-Baharaa (Flute) [Default]" },
+          { value: "audio/mohabbatein-love-theme.mp3", label: "🎻 Mohabbatein Love Theme (Instrumental) [Default]" },
+          { value: "audio/jashn-e-bahara.mp3", label: "🎵 Jashn-e-Baharaa (Flute)" },
           { value: "audio/royal-strings.mp3", label: "🎻 Royal Strings & Oboe (A.R. Rahman)" },
           { value: "audio/in-lamhon-ke-daaman-mein.mp3", label: "💫 In Lamhon Ke Daaman Mein (Romantic)" },
           { value: "synth:tanpura", label: "🪔 Sacred Tanpura Drone (Live Synth)" }
@@ -1163,7 +1166,7 @@
     let synthOscillators = [];
     let stopTimeoutId = null;
 
-    const DEFAULT_TRACK = (WEDDING_CONFIG.soundtrack && WEDDING_CONFIG.soundtrack.defaultTrack) || 'audio/jashn-e-bahara.mp3';
+    const DEFAULT_TRACK = (WEDDING_CONFIG.soundtrack && WEDDING_CONFIG.soundtrack.defaultTrack) || 'audio/mohabbatein-love-theme.mp3';
     let currentTrack = localStorage.getItem('wedding_song') || DEFAULT_TRACK;
 
     function syncDropdowns(val) {

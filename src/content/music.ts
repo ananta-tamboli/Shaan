@@ -2,8 +2,12 @@ import type { MusicTrack } from '@/types/wedding'
 
 export const musicTracks: MusicTrack[] = [
   {
+    value: 'audio/mohabbatein-love-theme.mp3',
+    label: '🎻 Mohabbatein Love Theme (Instrumental) [Default]',
+  },
+  {
     value: 'audio/jashn-e-bahara.mp3',
-    label: '🎵 Jashn-e-Baharaa (Flute) [Default]',
+    label: '🎵 Jashn-e-Baharaa (Flute)',
   },
   {
     value: 'audio/royal-strings.mp3',
@@ -19,4 +23,4 @@ export const musicTracks: MusicTrack[] = [
   },
 ]
 
-export const DEFAULT_TRACK = 'audio/jashn-e-bahara.mp3'
+export const DEFAULT_TRACK = 'audio/mohabbatein-love-theme.mp3'

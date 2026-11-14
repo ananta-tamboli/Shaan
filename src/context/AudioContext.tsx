@@ -14,6 +14,12 @@ import { DEFAULT_TRACK } from '@/content/music'
 const STORAGE_KEY = 'wedding_song'
 const SYNTH_KEY = 'synth:tanpura'
 
+function matchesTrack(audioSrc: string | null | undefined, track: string): boolean {
+  if (!audioSrc || !track) return false
+  const cleanTrack = track.replace(/^\//, '')
+  return audioSrc.endsWith(cleanTrack)
+}
+
 interface AudioContextValue {
   isPlaying: boolean
   currentTrack: string
@@ -56,23 +62,23 @@ export function AudioProvider({
     } else {
       synth.stop()
       if (audio) {
-        const doPlay = () => {
-          audio.play().then(() => {
-            setIsPlaying(true)
-          }).catch(() => {
-            // Fallback to synth if play() is still rejected
-            synth.start()
-            setIsPlaying(true)
-          })
-        }
-
-        if (!audio.src.endsWith(track)) {
-          // Src changed — wait for canplay before calling play() to avoid race
-          audio.addEventListener('canplay', doPlay, { once: true })
+        if (!matchesTrack(audio.src, track)) {
           audio.src = track
-          audio.load()
-        } else {
-          doPlay()
+        }
+        const promise = audio.play()
+        if (promise !== undefined) {
+          promise
+            .then(() => {
+              setIsPlaying(true)
+            })
+            .catch((err) => {
+              console.warn('Audio play was prevented or failed:', err)
+              if (err.name !== 'NotAllowedError') {
+                // Graceful fallback to synth on playback decode/format errors
+                synth.start()
+                setIsPlaying(true)
+              }
+            })
         }
       }
     }
@@ -86,55 +92,88 @@ export function AudioProvider({
   }, [audioRef, synth])
 
   // ---------------------------------------------------------------------------
-  // Stable ref to playTrack so the first-gesture handler always calls the
-  // latest version, even though it is registered in a mount-only effect.
-  // ---------------------------------------------------------------------------
-  const playTrackRef = useRef(playTrack)
-  useEffect(() => { playTrackRef.current = playTrack }, [playTrack])
-
-  // ---------------------------------------------------------------------------
-  // On mount: restore saved track, pre-load it, then start on first gesture.
-  // Browsers block audio.play() until the user has interacted with the page.
-  // We listen for the first click/keydown/touchstart/scroll at capture phase,
-  // which fires before any React handler — so even the very first Play button
-  // click will trigger autoplay correctly.
+  // On mount: restore saved track (migrating old default), pre-load it,
+  // and attach robust user activation listeners.
   // ---------------------------------------------------------------------------
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    const track = saved ?? DEFAULT_TRACK
+    let saved: string | null = null
+    try {
+      saved = localStorage.getItem(STORAGE_KEY)
+    } catch {}
+
+    // If previously saved with the legacy default, migrate to the new default
+    const track = (saved && saved !== 'audio/jashn-e-bahara.mp3') ? saved : DEFAULT_TRACK
     setCurrentTrack(track)
 
     // Pre-load the track so it buffers in the background
     const audio = audioRef.current
     if (audio && track !== SYNTH_KEY) {
-      audio.src = track
+      if (!matchesTrack(audio.src, track)) {
+        audio.src = track
+      }
       audio.load()
     }
 
-    let started = false
-
-    function onFirstGesture() {
-      if (started || isPlayingRef.current) return
-      started = true
-      removeListeners()
-      // Use the ref so we always call the latest playTrack function
-      playTrackRef.current(track)
-    }
+    let isAttempting = false
 
     function removeListeners() {
-      window.removeEventListener('click',      onFirstGesture, true)
-      window.removeEventListener('keydown',    onFirstGesture, true)
-      window.removeEventListener('touchstart', onFirstGesture, true)
-      window.removeEventListener('scroll',     onFirstGesture, true)
+      window.removeEventListener('click',       onFirstGesture, true)
+      window.removeEventListener('pointerdown', onFirstGesture, true)
+      window.removeEventListener('keydown',     onFirstGesture, true)
+      window.removeEventListener('touchstart',  onFirstGesture, true)
     }
 
-    window.addEventListener('click',      onFirstGesture, true)
-    window.addEventListener('keydown',    onFirstGesture, true)
-    window.addEventListener('touchstart', onFirstGesture, true)
-    window.addEventListener('scroll',     onFirstGesture, true)
+    function onFirstGesture(e: Event) {
+      if (isPlayingRef.current || isAttempting) return
+
+      // Ignore clicks directly on music toggle button to avoid racing with togglePlay
+      const target = e.target as HTMLElement | null
+      if (target && target.closest('[title*="Ambient Music"], [aria-label*="Music"], #musicBtn')) {
+        return
+      }
+
+      isAttempting = true
+      const audioEl = audioRef.current
+
+      if (track === SYNTH_KEY) {
+        synth.start()
+        setIsPlaying(true)
+        removeListeners()
+        isAttempting = false
+      } else if (audioEl) {
+        synth.stop()
+        if (!matchesTrack(audioEl.src, track)) {
+          audioEl.src = track
+        }
+        const promise = audioEl.play()
+        if (promise !== undefined) {
+          promise
+            .then(() => {
+              setIsPlaying(true)
+              removeListeners()
+              isAttempting = false
+            })
+            .catch(() => {
+              // User gesture was not yet valid or was interrupted;
+              // keep listeners active so the next interaction can retry.
+              isAttempting = false
+            })
+        } else {
+          isAttempting = false
+        }
+      } else {
+        isAttempting = false
+      }
+    }
+
+    // Modern transient activation events (do NOT include 'scroll' as browsers reject it)
+    window.addEventListener('click',       onFirstGesture, true)
+    window.addEventListener('pointerdown', onFirstGesture, true)
+    window.addEventListener('keydown',     onFirstGesture, true)
+    window.addEventListener('touchstart',  onFirstGesture, true)
 
     return removeListeners
-  }, [audioRef]) // audioRef is stable; this still runs exactly once
+  }, [audioRef, synth])
 
   // ---------------------------------------------------------------------------
   // Wire audio element error event → tanpura fallback
@@ -165,14 +204,16 @@ export function AudioProvider({
 
   const selectTrack = useCallback((track: string) => {
     setCurrentTrack(track)
-    localStorage.setItem(STORAGE_KEY, track)
+    try {
+      localStorage.setItem(STORAGE_KEY, track)
+    } catch {}
 
     if (isPlayingRef.current) {
       playTrack(track)
     } else {
       // Pre-load even if not currently playing
       const audio = audioRef.current
-      if (track !== SYNTH_KEY && audio && !audio.src.endsWith(track)) {
+      if (track !== SYNTH_KEY && audio && !matchesTrack(audio.src, track)) {
         audio.src = track
         audio.load()
       }
