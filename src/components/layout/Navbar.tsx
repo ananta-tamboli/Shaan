@@ -41,7 +41,6 @@ export default function Navbar() {
   const navLinks = [
     { href: '#story',     label: t.navStory },
     { href: '#itinerary', label: t.navItinerary },
-    { href: '#gallery',   label: t.navMoments },
     { href: '#rsvp',      label: t.navRsvp },
     { href: '#details',   label: t.navDetails },
   ]
