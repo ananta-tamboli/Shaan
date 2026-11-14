@@ -44,6 +44,9 @@ export function AudioProvider({
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrack, setCurrentTrack] = useState<string>(DEFAULT_TRACK)
   const synth = useTanpuraSynth()
+  const synthRef = useRef(synth)
+  useEffect(() => { synthRef.current = synth }, [synth])
+
   const isPlayingRef = useRef(false)
 
   // Keep ref in sync so callbacks always read the latest value without stale closures
@@ -57,10 +60,10 @@ export function AudioProvider({
     const audio = audioRef.current
     if (track === SYNTH_KEY) {
       if (audio) audio.pause()
-      synth.start()
+      synthRef.current.start()
       setIsPlaying(true)
     } else {
-      synth.stop()
+      synthRef.current.stop()
       if (audio) {
         if (!matchesTrack(audio.src, track)) {
           audio.src = track
@@ -75,21 +78,21 @@ export function AudioProvider({
               console.warn('Audio play was prevented or failed:', err)
               if (err.name !== 'NotAllowedError') {
                 // Graceful fallback to synth on playback decode/format errors
-                synth.start()
+                synthRef.current.start()
                 setIsPlaying(true)
               }
             })
         }
       }
     }
-  }, [audioRef, synth])
+  }, [audioRef])
 
   const pauseAll = useCallback(() => {
     const audio = audioRef.current
     if (audio) audio.pause()
-    synth.stop()
+    synthRef.current.stop()
     setIsPlaying(false)
-  }, [audioRef, synth])
+  }, [audioRef])
 
   // ---------------------------------------------------------------------------
   // On mount: restore saved track (migrating old default), pre-load it,
@@ -105,13 +108,12 @@ export function AudioProvider({
     const track = (saved && saved !== 'audio/jashn-e-bahara.mp3') ? saved : DEFAULT_TRACK
     setCurrentTrack(track)
 
-    // Pre-load the track so it buffers in the background
+    // Pre-load the track if not already matching
     const audio = audioRef.current
     if (audio && track !== SYNTH_KEY) {
       if (!matchesTrack(audio.src, track)) {
         audio.src = track
       }
-      audio.load()
     }
 
     let isAttempting = false
@@ -136,12 +138,12 @@ export function AudioProvider({
       const audioEl = audioRef.current
 
       if (track === SYNTH_KEY) {
-        synth.start()
+        synthRef.current.start()
         setIsPlaying(true)
         removeListeners()
         isAttempting = false
       } else if (audioEl) {
-        synth.stop()
+        synthRef.current.stop()
         if (!matchesTrack(audioEl.src, track)) {
           audioEl.src = track
         }
@@ -173,7 +175,7 @@ export function AudioProvider({
     window.addEventListener('touchstart',  onFirstGesture, true)
 
     return removeListeners
-  }, [audioRef, synth])
+  }, [audioRef])
 
   // ---------------------------------------------------------------------------
   // Wire audio element error event → tanpura fallback

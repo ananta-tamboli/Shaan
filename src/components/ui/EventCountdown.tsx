@@ -32,7 +32,7 @@ export default function EventCountdown({ isoDate }: EventCountdownProps) {
       </span>
       {parts.map(({ value, label }) => (
         <span key={label} className="flex items-baseline gap-0.5">
-          <span className="font-display text-sm font-bold theme-digit">{value}</span>
+          <span suppressHydrationWarning className="font-display text-sm font-bold theme-digit">{value}</span>
           <span className="text-[10px] text-stone-400 font-medium">{label}</span>
         </span>
       ))}

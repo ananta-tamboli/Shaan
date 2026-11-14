@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useCallback, useEffect } from 'react'
+import { useRef, useCallback, useEffect, useMemo } from 'react'
 
 interface TanpuraSynth {
   start: () => void
@@ -86,5 +86,5 @@ export function useTanpuraSynth(): TanpuraSynth {
     }
   }, [])
 
-  return { start, stop }
+  return useMemo(() => ({ start, stop }), [start, stop])
 }

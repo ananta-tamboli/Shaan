@@ -31,7 +31,10 @@ export default function Countdown({ isoDate }: CountdownProps) {
           key={label}
           className="theme-countdown-card rounded-xl p-3 sm:p-4 border flex flex-col items-center"
         >
-          <span className={`font-display text-2xl sm:text-4xl md:text-5xl font-bold ${className}`}>
+          <span
+            suppressHydrationWarning
+            className={`font-display text-2xl sm:text-4xl md:text-5xl font-bold ${className}`}
+          >
             {value}
           </span>
           <span className="text-[10px] sm:text-xs uppercase tracking-wider text-stone-500 mt-1 font-medium">
