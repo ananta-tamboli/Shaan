@@ -71,6 +71,7 @@ export interface Translations {
   rsvpEvent1: string
   rsvpEvent2: string
   rsvpEvent3: string
+  rsvpEvent4: string
   rsvpWishes: string
   rsvpWishesPlaceholder: string
   rsvpSubmit: string
@@ -157,8 +158,9 @@ const en: Translations = {
   rsvpAttendee5: '5+ Persons (Family Group)',
   rsvpEvents: 'Events You Will Grace',
   rsvpEvent1: 'Haldi Ceremony',
-  rsvpEvent2: 'Wedding (Muhurtham)',
-  rsvpEvent3: 'Grand Reception',
+  rsvpEvent2: 'Sangeet Ceremony',
+  rsvpEvent3: 'Wedding (Muhurtham)',
+  rsvpEvent4: 'Grand Reception',
   rsvpWishes: 'Warm Wishes for the Couple',
   rsvpWishesPlaceholder: 'Can\'t wait to celebrate with you both! Wishing you a lifetime of joy and happiness.',
   rsvpSubmit: 'Send RSVP Confirmation',
@@ -242,8 +244,9 @@ const hi: Translations = {
   rsvpAttendee5: '५+ व्यक्ति (पारिवारिक समूह)',
   rsvpEvents: 'आप किन समारोहों में शामिल होंगे',
   rsvpEvent1: 'हल्दी समारोह',
-  rsvpEvent2: 'विवाह (मुहूर्त)',
-  rsvpEvent3: 'भव्य स्वागत समारोह',
+  rsvpEvent2: 'संगीत समारोह',
+  rsvpEvent3: 'विवाह (मुहूर्त)',
+  rsvpEvent4: 'भव्य स्वागत समारोह',
   rsvpWishes: 'वर-वधू के लिए शुभकामनाएं',
   rsvpWishesPlaceholder: 'आप दोनों के साथ उत्सव मनाने का बेसब्री से इंतजार है! जीवन भर की खुशियों के लिए ढेरों शुभकामनाएं।',
   rsvpSubmit: 'आरएसवीपी भेजें',
@@ -327,8 +330,9 @@ const mr: Translations = {
   rsvpAttendee5: '५+ व्यक्ती (कुटुंब गट)',
   rsvpEvents: 'आपण कोणत्या समारंभांना उपस्थित राहाल',
   rsvpEvent1: 'हळद समारंभ',
-  rsvpEvent2: 'विवाह (मुहूर्त)',
-  rsvpEvent3: 'भव्य स्वागत समारंभ',
+  rsvpEvent2: 'संगीत सोहळा',
+  rsvpEvent3: 'विवाह (मुहूर्त)',
+  rsvpEvent4: 'भव्य स्वागत समारंभ',
   rsvpWishes: 'वधू-वरांसाठी मनःपूर्वक शुभेच्छा',
   rsvpWishesPlaceholder: 'आपणा दोघांसमवेत उत्सव साजरा करण्याची आतुरता आहे! वैवाहिक जीवनासाठी हार्दिक शुभेच्छा.',
   rsvpSubmit: 'आरएसव्हीपी पाठवा',

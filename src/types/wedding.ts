@@ -43,8 +43,8 @@ export interface DressCodeSwatch {
 }
 
 export interface WeddingEvent {
-  key: 'seemant' | 'haldi' | 'wedding' | 'reception'
-  calendarKey: 'seemant' | 'haldi' | 'wedding' | 'reception'
+  key: 'seemant' | 'haldi' | 'sangeet' | 'wedding' | 'reception'
+  calendarKey: 'seemant' | 'haldi' | 'sangeet' | 'wedding' | 'reception'
   name: string
   tagline: string
   badge: string
@@ -52,11 +52,11 @@ export interface WeddingEvent {
   date: string
   time: string
   address: string
-  dressCodeTitle: string
-  dressCodeDetail: string
-  dressCodeNote: string
-  dressCodeEmoji: string
-  dressCodeSwatches: DressCodeSwatch[]
+  dressCodeTitle?: string
+  dressCodeDetail?: string
+  dressCodeNote?: string
+  dressCodeEmoji?: string
+  dressCodeSwatches?: DressCodeSwatch[]
   mapsUrl: string
   /** UTC times for Google Calendar: "YYYYMMDDTHHMMSSz/YYYYMMDDTHHMMSSz" */
   calendarDates: string
