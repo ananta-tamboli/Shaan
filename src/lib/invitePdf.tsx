@@ -245,9 +245,9 @@ function Divider() {
 // ── Document ─────────────────────────────────────────────────────────────────
 export function InviteDocument() {
   const eventData = [
-    { name: 'Seemant Pujan',       time: 'Sun Dec 13  ·  7:30 AM',   dress: 'Traditional Festive Wear'   },
-    { name: 'Haldi Ceremony',      time: 'Sun Dec 13  ·  8:00 AM',   dress: 'Cloud White & Aqua Blue'    },
-    { name: 'Sacred Pheras',        time: 'Sun Dec 13  ·  5:46 PM',   dress: 'Royal Traditional & Silk'   },
+    { name: 'Haldi Ceremony',      time: 'Sat Dec 12  ·  4:00 PM',   dress: 'Cloud White & Aqua Blue'    },
+    { name: 'Sangeet Ceremony',    time: 'Sat Dec 12  ·  7:00 PM',   dress: ''                           },
+    { name: 'Sacred Pheras',       time: 'Sun Dec 13  ·  5:46 PM',   dress: 'Royal Traditional & Silk'   },
     { name: 'The Grand Reception', time: 'Sun Dec 13  ·  7:30 PM',   dress: 'Black Tie / Indo-Western'   },
   ]
 
@@ -295,7 +295,7 @@ export function InviteDocument() {
               <Text style={s.eventName}>{ev.name.toUpperCase()}</Text>
               <View style={s.goldLine} />
               <Text style={s.eventTime}>{ev.time}</Text>
-              <Text style={s.eventDress}>{ev.dress}</Text>
+              {ev.dress ? <Text style={s.eventDress}>{ev.dress}</Text> : null}
             </View>
           ))}
         </View>

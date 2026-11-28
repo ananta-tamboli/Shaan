@@ -42,7 +42,8 @@ const dressTitleClasses: Record<WeddingEvent['colorKey'], string> = {
 // ISO start times for each event (used for countdowns)
 const eventIso: Record<WeddingEvent['key'], string> = {
   seemant:   '2026-12-13T07:30:00+05:30',
-  haldi:     '2026-12-13T08:00:00+05:30',
+  haldi:     '2026-12-12T16:00:00+05:30',
+  sangeet:   '2026-12-12T19:00:00+05:30',
   wedding:   '2026-12-13T17:46:00+05:30',
   reception: '2026-12-13T19:30:00+05:30',
 }
@@ -109,14 +110,18 @@ export default function Itinerary() {
                 </div>
 
                 {/* Dress code */}
-                <div className={`rounded-xl p-3.5 border mb-6 ${dressBgClasses[event.colorKey]}`}>
-                  <div className={`text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 ${dressTitleClasses[event.colorKey]}`}>
-                    <span aria-hidden="true">{event.dressCodeEmoji}</span> {t.dressCode}
+                {event.dressCodeTitle && (
+                  <div className={`rounded-xl p-3.5 border mb-6 ${dressBgClasses[event.colorKey]}`}>
+                    <div className={`text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 ${dressTitleClasses[event.colorKey]}`}>
+                      <span aria-hidden="true">{event.dressCodeEmoji}</span> {t.dressCode}
+                    </div>
+                    <p className="text-xs font-semibold text-stone-800 mt-0.5">{event.dressCodeTitle}</p>
+                    {event.dressCodeDetail && <p className="text-[11px] text-stone-500 mt-0.5">{event.dressCodeDetail}</p>}
+                    {event.dressCodeSwatches && event.dressCodeSwatches.length > 0 && (
+                      <DressCodePalette swatches={event.dressCodeSwatches} />
+                    )}
                   </div>
-                  <p className="text-xs font-semibold text-stone-800 mt-0.5">{event.dressCodeTitle}</p>
-                  <p className="text-[11px] text-stone-500 mt-0.5">{event.dressCodeDetail}</p>
-                  <DressCodePalette swatches={event.dressCodeSwatches} />
-                </div>
+                )}
               </div>
 
               {/* Action buttons */}

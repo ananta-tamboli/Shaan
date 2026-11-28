@@ -15,7 +15,7 @@ export function addToGoogleCalendarMain() {
 }
 
 /** Opens Google Calendar event for a specific ceremony */
-export function addToCalendar(eventKey: 'seemant' | 'haldi' | 'wedding' | 'reception') {
+export function addToCalendar(eventKey: 'seemant' | 'haldi' | 'sangeet' | 'wedding' | 'reception') {
   const { brideShort, groomShort, venueAddress } = couple
   const b = brideShort
   const g = groomShort
@@ -34,10 +34,17 @@ export function addToCalendar(eventKey: 'seemant' | 'haldi' | 'wedding' | 'recep
     )
   } else if (eventKey === 'haldi') {
     title = encodeURIComponent(`Haldi Ceremony - ${b} & ${g}`)
-    // Dec 13 at 8:00 AM IST = 02:30 UTC; ends ~10:00 AM IST = 04:30 UTC
-    dates = '20261213T023000Z/20261213T043000Z'
+    // Dec 12 at 4:00 PM IST = 10:30 UTC; ends ~6:30 PM IST = 13:00 UTC
+    dates = '20261212T103000Z/20261212T130000Z'
     details = encodeURIComponent(
-      'Haldi & Phoolon Ki Holi at Oasis Banquets, Pune. Dress code: Yellow & Festive Florals.'
+      'Haldi & Phoolon Ki Holi at Oasis Banquets, Pune. Dress code: Cloud White & Aqua Blue.'
+    )
+  } else if (eventKey === 'sangeet') {
+    title = encodeURIComponent(`Sangeet Night - ${b} & ${g}`)
+    // Dec 12 at 7:00 PM IST = 13:30 UTC; ends ~11:00 PM IST = 17:30 UTC
+    dates = '20261212T133000Z/20261212T173000Z'
+    details = encodeURIComponent(
+      'Sangeet celebration with music, dance & joy at Oasis Banquets, Pune.'
     )
   } else if (eventKey === 'wedding') {
     title = encodeURIComponent(`Wedding Ceremony (Muhurtham) - ${b} & ${g}`)

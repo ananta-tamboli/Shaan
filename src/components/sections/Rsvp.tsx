@@ -32,7 +32,7 @@ function composeMessage(form: FormState, brideShort: string, groomShort: string)
 export default function Rsvp() {
   const { t } = useLang()
 
-  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3]
+  const ALL_EVENTS = [t.rsvpEvent1, t.rsvpEvent2, t.rsvpEvent3, t.rsvpEvent4]
 
   const INITIAL_STATE: FormState = {
     name: '',
